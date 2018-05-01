@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.SensorEntity" table="SENSOR" schema="SYSTEM">
+        <id name="id">
+            <column name="ID" sql-type="number(*)" precision="2147483646"/>
+        </id>
+        <property name="wave">
+            <column name="WAVE" sql-type="number(*)" precision="2147483646" not-null="true"/>
+        </property>
+        <set name="relatedSensorsById" inverse="true">
+            <key>
+                <column name="SENSOR1_ID"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.RelatedSensorsEntity"/>
+        </set>
+        <set name="relatedSensorsById_0" inverse="true">
+            <key>
+                <column name="SENSOR2_ID"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.RelatedSensorsEntity"/>
+        </set>
+        <set name="topologiesById" inverse="true">
+            <key>
+                <column name="SENSOR"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.TopologiesEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

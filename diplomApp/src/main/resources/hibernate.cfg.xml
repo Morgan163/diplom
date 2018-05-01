@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.username">SYSTEM</property>
+        <property name="connection.password">253634</property>
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>-->
+        <property name="show_sql">true</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <!-- DB schema will be updated if needed -->
+       <!-- <property name="hbm2ddl.auto">update</property>-->
+
+        <mapping resource="FiberEntity.hbm.xml"/>
+        <mapping class="model.FiberEntity"/>
+        <mapping resource="RelatedSensorsEntity.hbm.xml"/>
+        <mapping class="model.RelatedSensorsEntity"/>
+        <mapping resource="SensorEntity.hbm.xml"/>
+        <mapping class="model.SensorEntity"/>
+        <mapping resource="TopologiesEntity.hbm.xml"/>
+        <mapping class="model.TopologiesEntity"/>
+
+    </session-factory>
+</hibernate-configuration>

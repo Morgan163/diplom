@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.RelatedSensorsEntity" table="RELATED_SENSORS" schema="SYSTEM">
+        <id name="id">
+            <column name="ID" sql-type="number(*)" precision="2147483646"/>
+        </id>
+        <many-to-one name="sensorBySensor1Id" class="model.SensorEntity">
+            <column name="SENSOR1_ID"/>
+        </many-to-one>
+        <many-to-one name="fiberByFiberId" class="model.FiberEntity">
+            <column name="FIBER_ID"/>
+        </many-to-one>
+        <many-to-one name="sensorBySensor2Id" class="model.SensorEntity">
+            <column name="SENSOR2_ID"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
