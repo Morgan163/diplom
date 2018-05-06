@@ -39,7 +39,7 @@ public class FiberDAOImpl implements FiberDAO {
 
     public FiberEntity getFiberById(Long id) throws SQLException {
         Session session = daoUtils.createTransaction();
-        FiberEntity fiberEntity = session.load(FiberEntity.class,id);
+        FiberEntity fiberEntity = session.load(FiberEntity.class, id);
         daoUtils.closeSession(session);
         return fiberEntity;
     }

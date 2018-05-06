@@ -6,6 +6,7 @@ import model.RelatedSensorsEntity;
 import model.TopologiesEntity;
 import org.hibernate.Session;
 
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -39,14 +40,13 @@ public class RelatedSensorsDAOImpl implements RelatedSensorsDAO {
     public List getRelatedSensorsByTopology(TopologiesEntity topologiesEntity)
             throws SQLException {
         Session session = daoUtils.createTransaction();
-        String sql = "SELECT rs.ID, rs.SENSOR1_ID, rs.FIBER_ID, rs.SENSOR2_ID,  LEVEL " +
+      /*  Query query = session.createQuery("from RelatedSensorsEntity " +
+                "connect")*/
+        String sql = "SELECT * " +
                 "  FROM RELATED_SENSORS rs " +
                 "  CONNECT BY rs.SENSOR1_ID = PRIOR rs.SENSOR2_ID " +
-                "  START WITH rs.SENSOR1_ID = (SELECT t.SENSOR " +
-                "                              FROM TOPOLOGIES t " +
-                "                              WHERE t.ID="+topologiesEntity.getSensorBySensor().getId()+");";
-        List relatedSensorsEntities = session.createNativeQuery(sql).
-                addEntity(RelatedSensorsEntity.class).list();
+                "  START WITH rs.SENSOR1_ID = " + topologiesEntity.getSensorBySensor().getId();
+        List relatedSensorsEntities = session.createNativeQuery(sql).addEntity(RelatedSensorsEntity.class).list();
         daoUtils.closeSession(session);
         return relatedSensorsEntities;
     }
@@ -63,7 +63,7 @@ public class RelatedSensorsDAOImpl implements RelatedSensorsDAO {
 
     public RelatedSensorsEntity getRElatedSensorsById(Long id) throws SQLException {
         Session session = daoUtils.createTransaction();
-        RelatedSensorsEntity relatedSensorsEntity = session.load(RelatedSensorsEntity.class,id);
+        RelatedSensorsEntity relatedSensorsEntity = session.load(RelatedSensorsEntity.class, id);
         daoUtils.closeSession(session);
         return relatedSensorsEntity;
     }

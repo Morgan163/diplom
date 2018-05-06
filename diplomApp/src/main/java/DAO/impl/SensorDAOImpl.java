@@ -37,7 +37,7 @@ public class SensorDAOImpl implements SensorDAO {
 
     public SensorEntity getSensorById(Long id) throws SQLException {
         Session session = daoUtils.createTransaction();
-        SensorEntity sensorEntity = session.load(SensorEntity.class,id);
+        SensorEntity sensorEntity = session.load(SensorEntity.class, id);
         daoUtils.closeSession(session);
         return sensorEntity;
     }

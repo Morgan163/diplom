@@ -10,13 +10,13 @@ public class DaoUtils {
         Session session = null;
         session = HibernateUil.getSessionFactory().openSession();
         session.beginTransaction();
-        if(session==null){
+        if (session == null) {
             throw new SQLException("Соединение с базой данных не установлено");
         }
         return session;
     }
 
-    public void closeSession(Session session){
+    public void closeSession(Session session) {
         session.getTransaction().commit();
         if (session != null && session.isOpen()) {
             session.close();

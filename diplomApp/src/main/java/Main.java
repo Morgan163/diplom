@@ -1,20 +1,19 @@
 
-import oracle.jdbc.OracleDriver;
+import DAO.FactoryDAO;
+import DAO.RelatedSensorsDAO;
+import DAO.TopologiesDAO;
+import model.RelatedSensorsEntity;
+import model.TopologiesEntity;
 import org.hibernate.HibernateException;
-import org.hibernate.Metamodel;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import javax.persistence.metamodel.EntityType;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
+import java.util.Set;
 
 public class Main {
     private static final SessionFactory ourSessionFactory;
@@ -35,9 +34,25 @@ public class Main {
     public static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
     }
+
     public static void main(final String[] args) throws Exception {
 
-        final Session session = getSession();
+        TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
+        RelatedSensorsDAO relatedSensorsDAO = FactoryDAO.getInstance().getRelatedSensorsDAO();
+        List<TopologiesEntity> topologiesEntitySet = (List<TopologiesEntity>) topologiesDAO.getAllTopologies();
+        for(TopologiesEntity topologiesEntity:topologiesEntitySet){
+            List<RelatedSensorsEntity> relatedSensorsEntitySet = (List<RelatedSensorsEntity>) relatedSensorsDAO.
+                    getRelatedSensorsByTopology(topologiesEntity);
+            for (RelatedSensorsEntity relatedSensorsEntity:relatedSensorsEntitySet){
+                System.out.print(relatedSensorsEntity.getId());
+                System.out.print(relatedSensorsEntity.getFiberByFiberId().getId());
+                System.out.print(relatedSensorsEntity.getSensorBySensor1Id().getId());
+                System.out.print(relatedSensorsEntity.getSensorBySensor2Id().getId());
+                System.out.println();
+            }
+
+        }
+      /*  final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");
             final Metamodel metamodel = session.getSessionFactory().getMetamodel();
@@ -51,7 +66,7 @@ public class Main {
             }
         } finally {
             session.close();
-        }
+        }*/
 
        /* Class.forName("oracle.jdbc.OracleDriver");
         String URL = "jdbc:oracle:thin:@//localhost:1521/xe";

@@ -16,7 +16,7 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.connection.pool_size">1</property>
         <!-- DB schema will be updated if needed -->
-        <property name="hbm2ddl.auto">update</property>
+       <!-- <property name="hbm2ddl.auto">update</property>-->
 
         <mapping resource="FiberEntity.hbm.xml"/>
         <mapping class="model.FiberEntity"/>

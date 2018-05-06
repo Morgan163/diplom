@@ -38,12 +38,12 @@ public class TopologiesDAOImpl implements TopologiesDAO {
 
     public TopologiesEntity getTopologyById(Long id) throws SQLException {
         Session session = daoUtils.createTransaction();
-        TopologiesEntity topologiesEntity = session.load(TopologiesEntity.class,id);
+        TopologiesEntity topologiesEntity = session.load(TopologiesEntity.class, id);
         daoUtils.closeSession(session);
         return topologiesEntity;
     }
 
-    public Collection<TopologiesEntity> getAllSensors() throws SQLException {
+    public Collection<TopologiesEntity> getAllTopologies() throws SQLException {
         Session session = daoUtils.createTransaction();
         CriteriaQuery<TopologiesEntity> criteriaQuery = session.getCriteriaBuilder()
                 .createQuery(TopologiesEntity.class);
