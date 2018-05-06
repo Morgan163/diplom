@@ -1,0 +1,60 @@
+.menu-bar {
+    -fx-background-color: #aeb5ba, linear-gradient(to bottom, #ecf4fa 0%, #ced4d9 100%);
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.menu-bar .menu .label {
+    -fx-text-fill: #2d3e4c;
+}
+
+.background {
+    -fx-background-color: #fffee5;
+    -fx-opacity: 0.5;
+}
+
+#title {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #003381;
+    -fx-opacity: 0.8;
+    -fx-font-style: italic;
+}
+
+.label-bright {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+#menu-bar {
+    -fx-text-fill: #0a4281;
+    -fx-background-color: #fafbff;
+    -fx-border-color: #0a4281;
+}
+
+#menu-item:hover {
+    -fx-background-color: #0a4281;
+}
+
+#menu-item:hover .label {
+    -fx-text-fill: #fcfffb;
+}
+
+#menu-item {
+    -fx-background-color: #fafbff;
+}
+
+#menu-item .label {
+    -fx-text-fill: #003381;
+}
+
+#buttons{
+    -fx-background-color: #fafbff;
+    -fx-border-color: #003381;
+    -fx-text-fill: #003381;
+}
+#buttons:hover{
+    -fx-background-color: #003381;
+    -fx-text-fill:  #fafbff;
+}
+
+
