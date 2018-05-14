@@ -10,6 +10,7 @@ public class TopologiesEntity {
     private SensorEntity sensorBySensor;
 
     @Id
+    @GeneratedValue
     @Column(name = "ID", nullable = false, precision = 0)
     public long getId() {
         return id;

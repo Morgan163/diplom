@@ -11,6 +11,7 @@ public class FiberEntity {
     private Collection<RelatedSensorsEntity> relatedSensorsById;
 
     @Id
+    @GeneratedValue
     @Column(name = "ID", nullable = false, precision = 0)
     public long getId() {
         return id;

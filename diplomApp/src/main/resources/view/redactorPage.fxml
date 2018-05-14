@@ -31,10 +31,9 @@
                 <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
             </menus>
         </MenuBar>
-      <HBox prefHeight="140.0" prefWidth="1920.0" />
-        <HBox prefHeight="1097.0" prefWidth="1920.0">
+        <HBox prefHeight="940.0" prefWidth="1920.0">
             <children>
-                <Pane id="pane" prefHeight="940.0" prefWidth="1685.0">
+                <Pane id="pane" prefHeight="940.0" prefWidth="818.0">
                     <children>
                         <Rectangle id="source" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="66.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
                     </children>
@@ -44,33 +43,15 @@
                         <Insets />
                     </HBox.margin>
                     <children>
-                  <Button id="buttons" mnemonicParsing="false" prefHeight="78.0" prefWidth="170.0" text="Сохранить">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Label prefHeight="27.0" prefWidth="188.0" text="Название топологии">
-                     <VBox.margin>
-                        <Insets left="10.0" top="100.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField prefHeight="39.0" prefWidth="645.0">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </TextField>
                         <Button id="grid-button" mnemonicParsing="false" text="#">
                             <VBox.margin>
-                                <Insets left="60.0" top="200.0" />
+                                <Insets left="60.0" top="300.0" />
                             </VBox.margin>
                             <font>
                                 <Font size="24.0" />
                             </font>
                         </Button>
-                        <Button id="topology" mnemonicParsing="false" text="Топология">
+                        <Button id="buttons" mnemonicParsing="false" text="Топология">
                             <VBox.margin>
                                 <Insets left="40.0" top="100.0" />
                             </VBox.margin>

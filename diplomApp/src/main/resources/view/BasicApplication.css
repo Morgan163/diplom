@@ -47,45 +47,14 @@
     -fx-text-fill: #003381;
 }
 
-#buttons {
+#buttons{
     -fx-background-color: #fafbff;
     -fx-border-color: #003381;
     -fx-text-fill: #003381;
 }
-
-#buttons:hover {
+#buttons:hover{
     -fx-background-color: #003381;
-    -fx-text-fill: #fafbff;
+    -fx-text-fill:  #fafbff;
 }
-#topology {
-    -fx-background-color: #fafbff;
-    -fx-border-color: #003381;
-    -fx-text-fill: #003381;
-}
-
-#topology:hover {
-    -fx-background-color: #003381;
-    -fx-text-fill: #fafbff;
-}
-
-#grid-button {
-    -fx-background-color: #fafbff;
-    -fx-border-color: #003381;
-    -fx-border-radius: 8em;
-    -fx-text-fill: #003381;
-    -fx-background-radius: 8em;
-    -fx-min-width: 80px;
-    -fx-min-height: 80px;
-    -fx-max-width: 80px;
-    -fx-max-height: 80px;
-    -fx-font-size: 40px;
-
-}
-
-#grid-button:hover{
-    -fx-background-color: #003381;
-    -fx-text-fill: #fafbff;
-}
-
 
 
