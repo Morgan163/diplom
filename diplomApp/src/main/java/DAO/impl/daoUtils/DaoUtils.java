@@ -1,14 +1,14 @@
 package DAO.impl.daoUtils;
 
 import org.hibernate.Session;
-import utils.HibernateUil;
+import utils.HibernateUtil;
 
 import java.sql.SQLException;
 
 public class DaoUtils {
     public Session createTransaction() throws SQLException {
         Session session = null;
-        session = HibernateUil.getSessionFactory().openSession();
+        session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         if (session == null) {
             throw new SQLException("Соединение с базой данных не установлено");

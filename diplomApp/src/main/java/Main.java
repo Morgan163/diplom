@@ -16,9 +16,9 @@ import java.util.Locale;
 import java.util.Set;
 
 public class Main {
-    private static final SessionFactory ourSessionFactory;
+   /* private static final SessionFactory ourSessionFactory;
 
-    static {
+     *//* static {
         try {
             Locale.setDefault(Locale.ENGLISH);
             Configuration configuration = new Configuration();
@@ -29,11 +29,11 @@ public class Main {
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
-    }
+    }*//*
 
     public static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
-    }
+    }*/
 
     public static void main(final String[] args) throws Exception {
 

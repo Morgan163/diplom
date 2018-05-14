@@ -35,9 +35,9 @@
         <HBox prefHeight="1097.0" prefWidth="1920.0">
             <children>
                 <Pane id="pane" prefHeight="940.0" prefWidth="1685.0">
-                    <children>
-                        <Rectangle id="source" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="66.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-                    </children>
+               <children>
+                  <Circle id="source" fill="DODGERBLUE" layoutX="0.0" layoutY="0.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
                 </Pane>
                 <VBox prefHeight="943.0" prefWidth="211.0">
                     <HBox.margin>
@@ -57,7 +57,7 @@
                         <Insets left="10.0" top="100.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField prefHeight="39.0" prefWidth="645.0">
+                  <TextField id="name-field" prefHeight="39.0" prefWidth="645.0">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>

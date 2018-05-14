@@ -1,9 +1,7 @@
 package controller;
 
 import DAO.*;
-import model.RelatedSensorsEntity;
-import model.TopologiesEntity;
-import model.TopologyUtil;
+import model.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,5 +24,21 @@ public class DatabaseController {
             topologyUtils.add(topologyUtil);
         }
         return topologyUtils;
+    }
+
+    public void saveSensor(SensorEntity sensorEntity) throws SQLException {
+        sensorDAO.addSensor(sensorEntity);
+    }
+
+    public void saveFiber(FiberEntity fiberEntity) throws SQLException {
+        fiberDAO.addFiber(fiberEntity);
+    }
+
+    public void saveRelatedSensors(RelatedSensorsEntity relatedSensorsEntity) throws SQLException {
+        relatedSensorsDAO.addRelatedSensors(relatedSensorsEntity);
+    }
+
+    public void saveTopology(TopologyUtil topologyUtil) throws SQLException {
+        topologiesDAO.addTopology(topologyUtil.getTopologiesEntity());
     }
 }

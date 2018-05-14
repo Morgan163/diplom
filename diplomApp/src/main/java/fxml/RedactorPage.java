@@ -1,9 +1,11 @@
 package fxml;
 
+import controller.DatabaseController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
@@ -18,10 +20,10 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import model.FiberEntity;
-import model.RelatedSensorsEntity;
-import model.SensorEntity;
+import model.*;
+import org.apache.commons.lang3.StringUtils;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,17 +31,22 @@ import java.util.Map;
 
 
 public class RedactorPage extends Application {
+    private DatabaseController databaseController = new DatabaseController();
+
     private static final int BREG_RADIUS = 25;
     private static final double TEXT_FIELD_WIDTH = 60;
     private static final double TEXT_FIELD_HEIGHT = 25;
     private static final String START = "start";
     private static final String END = "end";
+
     private Button breg;
     private Button topology;
     private Button save;
+
     private MenuBar menuBar;
-    private Rectangle source;
+    private Circle source;
     private Pane pane;
+    private TextField name;
 
     private boolean bregClick = false;
     private boolean topologyClick = false;
@@ -62,6 +69,7 @@ public class RedactorPage extends Application {
     private Map<Circle, SensorEntity> circleSensorEntityMap = new HashMap<>();
     private Map<Line, FiberEntity> lineFiberEntityMap = new HashMap<>();
     private List<RelatedSensorsEntity> relatedSensorsEntities = new ArrayList<>();
+    private RelatedSensorsEntity relatedSensorsEntity;
 
     private Circle focusCircle;
     private Line focusLine;
@@ -83,9 +91,15 @@ public class RedactorPage extends Application {
     private void initialization(Parent root) {
         breg = (Button) root.lookup("#grid-button");
         topology = (Button) root.lookup("#topology");
-        //save = (Button)root.lookup("#save");
+        save = (Button) root.lookup("#buttons");
+        save.setOnMouseClicked(this::clickSaveButton);
         menuBar = (MenuBar) root.lookup("#menu-bar");
-        source = (Rectangle) root.lookup("#source");
+        name = (TextField) root.lookup("#name-field");
+        source = (Circle) root.lookup("#source");
+        source.setCenterX(69);
+        source.setCenterY(416);
+        source.setOnMouseClicked(e -> bregClick(e, source));
+        circleSensorEntityMap.put(source, new SensorEntity());
         pane = (Pane) root.lookup("#pane");
         drawInit();
     }
@@ -119,15 +133,85 @@ public class RedactorPage extends Application {
         if (bregClick) {
             drawBreg(event);
         }
-        if (topologyClick) {
 
+    }
+
+    private void clickSaveButton(MouseEvent event) {
+        if (check()) {
+            for (Map.Entry<Circle, SensorEntity> entry : circleSensorEntityMap.entrySet()) {
+                try {
+                    databaseController.saveSensor(entry.getValue());
+                } catch (SQLException o_O) {
+                    System.out.println(o_O.getMessage());
+                }
+            }
+            for (Map.Entry<Line, FiberEntity> entry : lineFiberEntityMap.entrySet()) {
+                try {
+                    databaseController.saveFiber(entry.getValue());
+                } catch (SQLException o_O) {
+                    System.out.println(o_O.getMessage());
+                }
+            }
+            for (RelatedSensorsEntity relatedSensorsEntity : relatedSensorsEntities) {
+                try {
+                    databaseController.saveRelatedSensors(relatedSensorsEntity);
+                } catch (SQLException o_O) {
+                    System.out.println(o_O.getMessage());
+                }
+            }
+            TopologiesEntity topologiesEntity = new TopologiesEntity();
+            topologiesEntity.setSensorBySensor(circleSensorEntityMap.get(source));
+            topologiesEntity.setName(name.getText());
+            TopologyUtil topologyUtil = new TopologyUtil();
+            topologyUtil.setTopologiesEntity(topologiesEntity);
+            try {
+                databaseController.saveTopology(topologyUtil);
+            } catch (SQLException o_O) {
+                System.out.println(o_O.getMessage());
+            }
         }
+
+    }
+
+    private boolean check() {
+        for (Map.Entry<Circle, SensorEntity> entry : circleSensorEntityMap.entrySet()) {
+            if (!entry.getKey().equals(source)) {
+                String text = circleTextMap.get(entry.getKey()).getText();
+                if ((!StringUtils.isBlank(text)) && (StringUtils.isNumeric(text))) {
+                    entry.getValue().setWave(Long.getLong(text));
+                } else {
+                    showAlert("Ошибка при сохранении", "Топология не может содержать решетки " +
+                            "без указания длины волны");
+                    circleTextMap.get(entry.getKey()).setVisible(true);
+                    return false;
+                }
+            }else{
+                entry.getValue().setWave(1L);
+            }
+        }
+        for (Map.Entry<Line, FiberEntity> entry : lineFiberEntityMap.entrySet()) {
+            String text = lineTextMap.get(entry.getKey()).getText();
+            if ((!StringUtils.isBlank(text)) && (StringUtils.isNumeric(text))) {
+                entry.getValue().setLength(Long.getLong(text));
+            } else {
+                showAlert("Ошибка при сохранении", "Топология не может содержать оптоволоконные участки " +
+                        "без указания длины");
+                lineTextMap.get(entry.getKey()).setVisible(true);
+                return false;
+            }
+        }
+        if (StringUtils.isBlank(name.getText())) {
+            showAlert("Ошибка при сохранении", "Имя топологии не может быть пустым");
+            return false;
+        }
+        return true;
     }
 
     private void drawBreg(MouseEvent event) {
         Image image = new Image("/image/grid.jpg");
         Circle circle = new Circle(event.getSceneX(), event.getSceneY() - BREG_RADIUS, BREG_RADIUS,
                 new ImagePattern(image));
+        circleSensorEntityMap.put(circle, new SensorEntity());
         circle.setOnMousePressed(e -> bregPressed(e, circle));
         circle.setOnMouseDragged(e -> bregDrag(e, circle));
         circle.setOnMouseClicked(e -> bregClick(e, circle));
@@ -212,19 +296,23 @@ public class RedactorPage extends Application {
         if (topologyClick) {
             drawTopology(event, circle);
         }
-        if (event.getButton().name().equals("SECONDARY")) {
-            if (circleTextMap.get(circle).isVisible()) {
-                circleTextMap.get(circle).setVisible(false);
+        if (!circle.equals(source)) {
+            if (event.getButton().name().equals("SECONDARY")) {
+
+                if (circleTextMap.get(circle).isVisible()) {
+                    circleTextMap.get(circle).setVisible(false);
+                } else {
+                    circleTextMap.get(circle).setVisible(true);
+                }
             } else {
-                circleTextMap.get(circle).setVisible(true);
+                disableFocus();
+                focusCircle = circle;
+                Image image = new Image("/image/gridClick.jpg");
+                focusCircle.setFill(new ImagePattern(image));
             }
-        } else {
-            disableFocus();
-            focusCircle = circle;
-            Image image = new Image("/image/gridClick.jpg");
-            focusCircle.setFill(new ImagePattern(image));
         }
     }
+
 
     private void topologyClick(MouseEvent event) {
         Line line = (Line) event.getPickResult().getIntersectedNode();
@@ -241,7 +329,7 @@ public class RedactorPage extends Application {
         }
     }
 
-    private void disableFocus(){
+    private void disableFocus() {
         if (focusCircle != null) {
             Image image = new Image("/image/grid.jpg");
             focusCircle.setFill(new ImagePattern(image));
@@ -265,7 +353,15 @@ public class RedactorPage extends Application {
             List<Circle> circles = new ArrayList<>();
             circles.add(circle);
             lineCircleMap.put(line, circles);
+            relatedSensorsEntity = new RelatedSensorsEntity();
+            relatedSensorsEntity.setSensorBySensor1Id(circleSensorEntityMap.get(circle));
         } else {
+            relatedSensorsEntity.setSensorBySensor2Id(circleSensorEntityMap.get(circle));
+            lineFiberEntityMap.put(line, new FiberEntity());
+            relatedSensorsEntity.setFiberByFiberId(lineFiberEntityMap.get(line));
+            relatedSensorsEntities.add(relatedSensorsEntity);
+            relatedSensorsEntity = null;
+
             lineCircleMap.get(line).add(circle);
             line.setStartX(topologyStartX);
             line.setStartY(topologyStartY);
@@ -312,8 +408,10 @@ public class RedactorPage extends Application {
 
     private void deleteLine(Line deleteLine, Circle excludedCircle) {
         pane.getChildren().remove(deleteLine);
+        deleteRelatedSensor(lineFiberEntityMap.get(deleteLine));
+        lineFiberEntityMap.remove(deleteLine);
         for (Circle circle : lineCircleMap.get(deleteLine)) {
-            if ((!circle.equals(excludedCircle))&&(circleLinesHashMap.containsKey(circle))) {
+            if ((!circle.equals(excludedCircle)) && (circleLinesHashMap.containsKey(circle))) {
                 circleLinesHashMap.get(circle).remove(deleteLine);
             }
         }
@@ -323,6 +421,8 @@ public class RedactorPage extends Application {
     }
 
     private void deleteCircle() {
+        deleteRelatedSensor(circleSensorEntityMap.get(focusCircle));
+        circleSensorEntityMap.remove(focusCircle);
         pane.getChildren().remove(focusCircle);
         pane.getChildren().remove(circleTextMap.get(focusCircle));
         for (Map.Entry<Line, String> lineStringEntry : circleLinesHashMap.get(focusCircle).entrySet()) {
@@ -330,6 +430,40 @@ public class RedactorPage extends Application {
         }
         circleLinesHashMap.remove(focusCircle);
         focusCircle = null;
+    }
+
+    private void deleteRelatedSensor(SensorEntity sensorEntity) {
+        RelatedSensorsEntity forDelete = null;
+        for (RelatedSensorsEntity relatedSensorsEntity : relatedSensorsEntities) {
+            if ((relatedSensorsEntity.getSensorBySensor1Id().equals(sensorEntity) ||
+                    (relatedSensorsEntity.getSensorBySensor2Id().equals(relatedSensorsEntity)))) {
+                forDelete = relatedSensorsEntity;
+            }
+        }
+        if (relatedSensorsEntity != null) {
+            relatedSensorsEntities.remove(forDelete);
+        }
+    }
+
+    private void deleteRelatedSensor(FiberEntity fiberEntity) {
+        RelatedSensorsEntity forDelete = null;
+        for (RelatedSensorsEntity relatedSensorsEntity : relatedSensorsEntities) {
+            if (relatedSensorsEntity.getFiberByFiberId().equals(fiberEntity)) {
+                forDelete = relatedSensorsEntity;
+            }
+        }
+        if (relatedSensorsEntity != null) {
+            relatedSensorsEntities.remove(forDelete);
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText("Ошибка");
+        alert.setContentText(message);
+
+        alert.showAndWait();
     }
 
     public Button getBreg() {

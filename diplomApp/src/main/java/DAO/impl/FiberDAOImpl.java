@@ -4,9 +4,7 @@ import DAO.FiberDAO;
 import DAO.impl.daoUtils.DaoUtils;
 import model.FiberEntity;
 import org.hibernate.Session;
-import utils.HibernateUil;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.sql.SQLException;
 import java.util.Collection;

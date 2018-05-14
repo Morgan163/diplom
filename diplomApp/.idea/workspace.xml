@@ -2,53 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fffb1a02-92a8-4f03-a0f4-9572106f56d4.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/fffb1a02-92a8-4f03-a0f4-9572106f56d4.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fffb1a02-92a8-4f03-a0f4-9572106f56d4/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" afterPath="$PROJECT_DIR$/.idea/dataSources/fffb1a02-92a8-4f03-a0f4-9572106f56d4/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/diplomApp.iml" afterPath="$PROJECT_DIR$/diplomApp.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/impl/FiberDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/DAO/impl/FiberDAOImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java" afterPath="$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TopologyUtil.java" afterPath="$PROJECT_DIR$/src/main/java/model/TopologyUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/HibernateUil.java" afterPath="$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/resources/image/Thumbs.db" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/FiberDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/RelatedSensorsDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/SensorDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/TopologiesDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Controller.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/HibernateUil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/compiler.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/description.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/encodings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/gradle.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/libraries/Hibernate_5_2_16_5_2_16.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/uiDesigner.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/src/main/java/Main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/src/main/java/sample/Controller.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/src/main/java/sample/Main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/src/main/java/sample/sample.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../Система/Система.iml" afterPath="" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,21 +88,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="BasicApplication.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+            <state relative-caret-position="525">
+              <caret line="51" column="54" lean-forward="false" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="77" column="10" lean-forward="false" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+            <state relative-caret-position="285">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HibernateUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="25" column="57" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -142,32 +121,71 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="275">
               <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedactorPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="188" column="42" lean-forward="false" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#18445#18446#0" expanded="true" />
+                <element signature="e#18472#18473#0" expanded="true" />
+                <element signature="e#18512#18513#0" expanded="true" />
+                <element signature="e#18544#18545#0" expanded="true" />
+                <element signature="e#18579#18580#0" expanded="true" />
+                <element signature="e#18610#18611#0" expanded="true" />
+                <element signature="e#18658#18659#0" expanded="true" />
+                <element signature="e#18698#18699#0" expanded="true" />
+                <element signature="e#18730#18731#0" expanded="true" />
+                <element signature="e#18757#18758#0" expanded="true" />
+                <element signature="e#18797#18798#0" expanded="true" />
+                <element signature="e#18829#18830#0" expanded="true" />
+                <element signature="e#18864#18865#0" expanded="true" />
+                <element signature="e#18894#18895#0" expanded="true" />
+                <element signature="e#18941#18942#0" expanded="true" />
+                <element signature="e#18979#18980#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedactorPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
+      <file leaf-file-name="DaoUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="400">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RelatedSensorsEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java">
+      <file leaf-file-name="SensorDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/SensorDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="275">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redactorPage.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -181,31 +199,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopologiesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensorEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/SensorEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="610">
+              <caret line="41" column="68" lean-forward="false" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -256,16 +254,19 @@
         <option value="$PROJECT_DIR$/src/main/java/DAO/RelatedSensorsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/SensorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUil.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/TopologiesDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/impl/RelatedSensorsDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/BasicApplication_css/BasicApplication.css" />
         <option value="$PROJECT_DIR$/src/main/resources/view/startPage.fxml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css" />
         <option value="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUil.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
       </list>
     </option>
@@ -368,6 +369,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="daoUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -391,6 +419,14 @@
               <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,6 +440,11 @@
             <path>
               <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 (4) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
@@ -461,21 +502,22 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="JPA.DatabaseSchemaImportDialog" value="fffb1a02-92a8-4f03-a0f4-9572106f56d4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../diplom/diplomApp" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16475096" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\андрей\Documents\Диплом\diplom\diplomApp\src\main\resources" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\андрей\Documents\Диплом\diplom\diplomApp\src\main\resources\fxml" />
+      <recent name="C:\Users\андрей\Documents\Диплом\diplom\diplomApp\src\main\resources\view" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="model" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\андрей\Documents\Диплом\diplom\diplomApp\src\main\resources\view" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\андрей\Documents\Диплом\diplom\diplomApp\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -667,7 +709,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1525087487521" duration="22094000" />
       <workItem from="1525247223960" duration="17542000" />
-      <workItem from="1526316003347" duration="58000" />
+      <workItem from="1526316003347" duration="9290000" />
     </task>
     <task id="LOCAL-00001" summary="Added gui forms">
       <created>1525639781753</created>
@@ -683,11 +725,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526315862927</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bug fix">
+      <created>1526316105448</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526316105448</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49388000" />
+    <option name="totallyTimeSpent" value="58620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -702,20 +751,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74531835" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52309614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2172973" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27243245" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -732,6 +781,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -744,7 +819,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
+          <line>188</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
+          <line>189</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -753,14 +848,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/FiberDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -772,9 +859,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1100">
           <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -831,9 +916,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,13 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/SensorDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/TopologiesDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -942,24 +1018,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/FactoryDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/HibernateUil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,48 +1074,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/topologyPage.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/startPage.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/BasicApplication.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="49" column="84" lean-forward="false" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="77" column="10" lean-forward="false" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/javafx-src.zip!/javafx/scene/shape/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DatabaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
+        <state relative-caret-position="0">
           <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
           <folding />
         </state>
@@ -1100,18 +1128,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/SensorEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/SensorEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1124,10 +1152,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="41" column="68" lean-forward="false" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="51" column="54" lean-forward="false" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="25" column="57" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/SensorDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="138">
+          <caret line="188" column="42" lean-forward="false" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#18445#18446#0" expanded="true" />
+            <element signature="e#18472#18473#0" expanded="true" />
+            <element signature="e#18512#18513#0" expanded="true" />
+            <element signature="e#18544#18545#0" expanded="true" />
+            <element signature="e#18579#18580#0" expanded="true" />
+            <element signature="e#18610#18611#0" expanded="true" />
+            <element signature="e#18658#18659#0" expanded="true" />
+            <element signature="e#18698#18699#0" expanded="true" />
+            <element signature="e#18730#18731#0" expanded="true" />
+            <element signature="e#18757#18758#0" expanded="true" />
+            <element signature="e#18797#18798#0" expanded="true" />
+            <element signature="e#18829#18830#0" expanded="true" />
+            <element signature="e#18864#18865#0" expanded="true" />
+            <element signature="e#18894#18895#0" expanded="true" />
+            <element signature="e#18941#18942#0" expanded="true" />
+            <element signature="e#18979#18980#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/daoUtils/DaoUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1143,7 +1258,6 @@
             <option name="proportions">
               <list>
                 <option value="0.16475096" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
