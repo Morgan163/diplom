@@ -1,15 +1,16 @@
 package model;
 
+import java.util.List;
 import java.util.Set;
 
 public class TopologyUtil {
     private TopologiesEntity topologiesEntity;
-    private Set<RelatedSensorsEntity> relatedSensorsEntitySet;
+    private List<RelatedSensorsEntity> relatedSensorsEntitySet;
 
     public TopologyUtil() {
     }
 
-    public TopologyUtil(TopologiesEntity topologiesEntity, Set<RelatedSensorsEntity> relatedSensorsEntitySet) {
+    public TopologyUtil(TopologiesEntity topologiesEntity, List<RelatedSensorsEntity> relatedSensorsEntitySet) {
 
         this.topologiesEntity = topologiesEntity;
         this.relatedSensorsEntitySet = relatedSensorsEntitySet;
@@ -23,11 +24,11 @@ public class TopologyUtil {
         this.topologiesEntity = topologiesEntity;
     }
 
-    public Set<RelatedSensorsEntity> getRelatedSensorsEntitySet() {
+    public List<RelatedSensorsEntity> getRelatedSensorsEntitySet() {
         return relatedSensorsEntitySet;
     }
 
-    public void setRelatedSensorsEntitySet(Set<RelatedSensorsEntity> relatedSensorsEntitySet) {
+    public void setRelatedSensorsEntitySet(List<RelatedSensorsEntity> relatedSensorsEntitySet) {
         this.relatedSensorsEntitySet = relatedSensorsEntitySet;
     }
 }

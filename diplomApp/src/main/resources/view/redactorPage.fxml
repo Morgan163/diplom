@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar id="menu-bar" VBox.vgrow="NEVER">
+            <menus>
+                <Menu id="menu-item" mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
+                    </items>
+                </Menu>
+                <Menu id="menu-item" mnemonicParsing="false" text="Справка">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Руководство" />
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" />
+                    </items>
+                </Menu>
+                <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
+            </menus>
+        </MenuBar>
+        <HBox prefHeight="940.0" prefWidth="1920.0">
+            <children>
+                <Pane id="pane" prefHeight="940.0" prefWidth="818.0">
+                    <children>
+                        <Rectangle id="source" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="66.0" layoutY="400.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+                    </children>
+                </Pane>
+                <VBox prefHeight="943.0" prefWidth="211.0">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <children>
+                        <Button id="grid-button" mnemonicParsing="false" text="#">
+                            <VBox.margin>
+                                <Insets left="60.0" top="300.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button id="buttons" mnemonicParsing="false" text="Топология">
+                            <VBox.margin>
+                                <Insets left="40.0" top="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <stylesheets>
+        <URL value="@BasicApplication.css" />
+    </stylesheets>
+    <styleClass>
+        <String fx:value="background" />
+        <String fx:value="label-bright" />
+    </styleClass>
+</VBox>

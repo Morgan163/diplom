@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar id="menu-bar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu id="menu-item" mnemonicParsing="false" text="Меню">
+               <items>
+                  <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
+                  <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
+               </items>
+        </Menu>
+        <Menu id="menu-item" mnemonicParsing="false" text="Справка">
+          <items>
+            <MenuItem id="menu-item" mnemonicParsing="false" text="Руководство" />
+                  <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" />
+          </items>
+        </Menu>
+            <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
+      </menus>
+    </MenuBar>
+      <HBox prefHeight="940.0" prefWidth="1920.0">
+         <children>
+            <ListView prefHeight="940.0" prefWidth="332.0" />
+            <Canvas height="883.0" width="1317.0">
+               <HBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </HBox.margin>
+            </Canvas>
+            <VBox prefHeight="943.0" prefWidth="211.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <Button id="buttons" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="185.0" text="Редактировать">
+                     <VBox.margin>
+                        <Insets left="10.0" top="300.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" text="Удалить">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="60.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" text="Создать">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="60.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@BasicApplication.css" />
+  </stylesheets>
+   <styleClass>
+      <String fx:value="background" />
+      <String fx:value="label-bright" />
+   </styleClass>
+</VBox>

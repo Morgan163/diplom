@@ -6,7 +6,63 @@
     <artifactId>diplomApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <build>>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+                <execution>
+                    <id>copy-resources</id>
+                    <phase>validate</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>
+                            ${basedir}/target/resources
+                        </outputDirectory>
 
+                        <resources>
+                            <resource>
+                                <filtering>false</filtering>
+                                <directory>src/main/java/resources/view</directory>
+                                <includes>
+                                    <include>*.fxml</include>
+                                </includes>
+                            </resource>
+                            <resource>
+                                <directory>src/main/java/resources/image</directory>
+                                <includes>
+                                    <include>*</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
     <dependencies>
         <dependency>
             <groupId>org.hibernate</groupId>
