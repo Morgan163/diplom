@@ -6,13 +6,21 @@ import java.util.Collection;
 @Entity
 @Table(name = "FIBER", schema = "SYSTEM", catalog = "")
 public class FiberEntity {
+    @Id
+    @SequenceGenerator(name="fiber_seq",
+            sequenceName="FIBER_SEQUENCE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,
+            generator="fiber_seq")
+    @Column(name = "ID", nullable = false, precision = 0)
     private long id;
+    @Basic
+    @Column(name = "LENGTH", nullable = true, precision = 0)
     private Long length;
+    @OneToMany(mappedBy = "fiberByFiberId")
     private Collection<RelatedSensorsEntity> relatedSensorsById;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", nullable = false, precision = 0)
+
+
     public long getId() {
         return id;
     }
@@ -21,8 +29,7 @@ public class FiberEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "LENGTH", nullable = true, precision = 0)
+
     public Long getLength() {
         return length;
     }
@@ -51,7 +58,7 @@ public class FiberEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "fiberByFiberId")
+
     public Collection<RelatedSensorsEntity> getRelatedSensorsById() {
         return relatedSensorsById;
     }

@@ -1,8 +1,10 @@
 
 import DAO.FactoryDAO;
 import DAO.RelatedSensorsDAO;
+import DAO.SensorDAO;
 import DAO.TopologiesDAO;
 import model.RelatedSensorsEntity;
+import model.SensorEntity;
 import model.TopologiesEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -37,7 +39,11 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
 
-        TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
+        SensorEntity sensorEntity = new SensorEntity();
+        sensorEntity.setWave(654L);
+        SensorDAO sensorDAO = FactoryDAO.getInstance().getSensorDAO();
+        sensorDAO.addSensor(sensorEntity);
+        /*TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
         RelatedSensorsDAO relatedSensorsDAO = FactoryDAO.getInstance().getRelatedSensorsDAO();
         List<TopologiesEntity> topologiesEntitySet = (List<TopologiesEntity>) topologiesDAO.getAllTopologies();
         for(TopologiesEntity topologiesEntity:topologiesEntitySet){
@@ -51,7 +57,7 @@ public class Main {
                 System.out.println();
             }
 
-        }
+        }*/
       /*  final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");

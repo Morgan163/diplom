@@ -178,21 +178,21 @@ public class RedactorPage extends Application {
             if (!entry.getKey().equals(source)) {
                 String text = circleTextMap.get(entry.getKey()).getText();
                 if ((!StringUtils.isBlank(text)) && (StringUtils.isNumeric(text))) {
-                    entry.getValue().setWave(Long.getLong(text));
+                    entry.getValue().setWave(Long.parseLong(text, 10));
                 } else {
                     showAlert("Ошибка при сохранении", "Топология не может содержать решетки " +
                             "без указания длины волны");
                     circleTextMap.get(entry.getKey()).setVisible(true);
                     return false;
                 }
-            }else{
+            } else {
                 entry.getValue().setWave(1L);
             }
         }
         for (Map.Entry<Line, FiberEntity> entry : lineFiberEntityMap.entrySet()) {
             String text = lineTextMap.get(entry.getKey()).getText();
             if ((!StringUtils.isBlank(text)) && (StringUtils.isNumeric(text))) {
-                entry.getValue().setLength(Long.getLong(text));
+                entry.getValue().setLength(Long.parseLong(text, 10));
             } else {
                 showAlert("Ошибка при сохранении", "Топология не может содержать оптоволоконные участки " +
                         "без указания длины");

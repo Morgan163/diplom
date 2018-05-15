@@ -6,15 +6,25 @@ import java.util.Collection;
 @Entity
 @Table(name = "SENSOR", schema = "SYSTEM", catalog = "")
 public class SensorEntity {
+    @Id
+    @SequenceGenerator(name="sensor_seq",
+            sequenceName="SYSTEM.SENSOR_SEQUENCE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,
+            generator="sensor_seq")
+    @Column(name = "ID", nullable = false, precision = 0)
     private long id;
+
+    @Basic
+    @Column(name = "WAVE", nullable = true, precision = 0)
     private Long wave;
+    @OneToMany(mappedBy = "sensorBySensor1Id")
     private Collection<RelatedSensorsEntity> relatedSensorsById;
+    @OneToMany(mappedBy = "sensorBySensor2Id")
     private Collection<RelatedSensorsEntity> relatedSensorsById_0;
+    @OneToMany(mappedBy = "sensorBySensor")
     private Collection<TopologiesEntity> topologiesById;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", nullable = false, precision = 0)
+
     public long getId() {
         return id;
     }
@@ -23,8 +33,7 @@ public class SensorEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "WAVE", nullable = true, precision = 0)
+
     public Long getWave() {
         return wave;
     }
@@ -53,7 +62,7 @@ public class SensorEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "sensorBySensor1Id")
+
     public Collection<RelatedSensorsEntity> getRelatedSensorsById() {
         return relatedSensorsById;
     }
@@ -62,7 +71,7 @@ public class SensorEntity {
         this.relatedSensorsById = relatedSensorsById;
     }
 
-    @OneToMany(mappedBy = "sensorBySensor2Id")
+
     public Collection<RelatedSensorsEntity> getRelatedSensorsById_0() {
         return relatedSensorsById_0;
     }
@@ -71,7 +80,7 @@ public class SensorEntity {
         this.relatedSensorsById_0 = relatedSensorsById_0;
     }
 
-    @OneToMany(mappedBy = "sensorBySensor")
+
     public Collection<TopologiesEntity> getTopologiesById() {
         return topologiesById;
     }

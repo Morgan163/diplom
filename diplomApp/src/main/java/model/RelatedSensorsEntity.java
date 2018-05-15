@@ -5,14 +5,24 @@ import javax.persistence.*;
 @Entity
 @Table(name = "RELATED_SENSORS", schema = "SYSTEM", catalog = "")
 public class RelatedSensorsEntity {
+    @Id
+    @SequenceGenerator(name="rel_seq",
+            sequenceName="RELATED_SENSORS_SEQUENCE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,
+            generator="rel_seq")
+    @Column(name = "ID", nullable = false, precision = 0)
     private long id;
+    @ManyToOne
+    @JoinColumn(name = "SENSOR1_ID", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor1Id;
+    @ManyToOne
+    @JoinColumn(name = "FIBER_ID", referencedColumnName = "ID", nullable = false)
     private FiberEntity fiberByFiberId;
+    @ManyToOne
+    @JoinColumn(name = "SENSOR2_ID", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor2Id;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", nullable = false, precision = 0)
+
     public long getId() {
         return id;
     }
@@ -38,8 +48,7 @@ public class RelatedSensorsEntity {
         return (int) (id ^ (id >>> 32));
     }
 
-    @ManyToOne
-    @JoinColumn(name = "SENSOR1_ID", referencedColumnName = "ID", nullable = false)
+
     public SensorEntity getSensorBySensor1Id() {
         return sensorBySensor1Id;
     }
@@ -48,8 +57,7 @@ public class RelatedSensorsEntity {
         this.sensorBySensor1Id = sensorBySensor1Id;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "FIBER_ID", referencedColumnName = "ID", nullable = false)
+
     public FiberEntity getFiberByFiberId() {
         return fiberByFiberId;
     }
@@ -58,8 +66,7 @@ public class RelatedSensorsEntity {
         this.fiberByFiberId = fiberByFiberId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "SENSOR2_ID", referencedColumnName = "ID", nullable = false)
+
     public SensorEntity getSensorBySensor2Id() {
         return sensorBySensor2Id;
     }

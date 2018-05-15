@@ -5,13 +5,21 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TOPOLOGIES", schema = "SYSTEM", catalog = "")
 public class TopologiesEntity {
+    @Id
+    @SequenceGenerator(name="top_seq",
+            sequenceName="TOPOLOGY_SEQUENCE")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,
+            generator="top_seq")
+    @Column(name = "ID", nullable = false, precision = 0)
     private long id;
+    @Basic
+    @Column(name = "NAME", nullable = false, length = 50)
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "SENSOR", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", nullable = false, precision = 0)
+
     public long getId() {
         return id;
     }
@@ -20,8 +28,7 @@ public class TopologiesEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "NAME", nullable = false, length = 50)
+
     public String getName() {
         return name;
     }
@@ -50,8 +57,7 @@ public class TopologiesEntity {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "SENSOR", referencedColumnName = "ID", nullable = false)
+
     public SensorEntity getSensorBySensor() {
         return sensorBySensor;
     }
