@@ -294,7 +294,7 @@ public class RedactorPage extends Application {
 
     private void bregClick(MouseEvent event, Circle circle) {
         if (topologyClick) {
-            drawTopology(event, circle);
+            drawTopology(circle);
         }
         if (!circle.equals(source)) {
             if (event.getButton().name().equals("SECONDARY")) {
@@ -341,7 +341,7 @@ public class RedactorPage extends Application {
         }
     }
 
-    private void drawTopology(MouseEvent event, Circle circle) {
+    private void drawTopology(Circle circle) {
         if (topologyStart) {
             topologyStartX = circle.getCenterX();
             topologyStartY = circle.getCenterY();

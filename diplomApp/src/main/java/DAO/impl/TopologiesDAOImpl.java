@@ -20,7 +20,7 @@ public class TopologiesDAOImpl implements TopologiesDAO {
 
     public void addTopology(TopologiesEntity topologiesEntity) throws SQLException {
         Session session = daoUtils.createTransaction();
-        session.save(topologiesEntity);
+        session.saveOrUpdate(topologiesEntity);
         daoUtils.closeSession(session);
     }
 

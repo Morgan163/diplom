@@ -19,7 +19,7 @@ public class SensorDAOImpl implements SensorDAO {
 
     public void addSensor(SensorEntity sensorEntity) throws SQLException {
         Session session = daoUtils.createTransaction();
-        session.save(sensorEntity);
+        session.saveOrUpdate(sensorEntity);
         daoUtils.closeSession(session);
     }
 

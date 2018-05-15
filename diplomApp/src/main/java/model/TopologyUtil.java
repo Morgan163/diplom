@@ -7,6 +7,11 @@ public class TopologyUtil {
     private TopologiesEntity topologiesEntity;
     private List<RelatedSensorsEntity> relatedSensorsEntitySet;
 
+    @Override
+    public String toString() {
+        return topologiesEntity.getName();
+    }
+
     public TopologyUtil() {
     }
 

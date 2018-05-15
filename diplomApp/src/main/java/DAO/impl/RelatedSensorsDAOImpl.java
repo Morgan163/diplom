@@ -21,7 +21,7 @@ public class RelatedSensorsDAOImpl implements RelatedSensorsDAO {
 
     public void addRelatedSensors(RelatedSensorsEntity relatedSensorsEntity) throws SQLException {
         Session session = daoUtils.createTransaction();
-        session.save(relatedSensorsEntity);
+        session.saveOrUpdate(relatedSensorsEntity);
         daoUtils.closeSession(session);
     }
 

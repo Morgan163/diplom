@@ -32,18 +32,14 @@
     </MenuBar>
       <HBox prefHeight="940.0" prefWidth="1920.0">
          <children>
-            <ListView prefHeight="940.0" prefWidth="332.0" />
-            <Canvas height="883.0" width="1317.0">
-               <HBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </HBox.margin>
-            </Canvas>
+            <ListView id="list" prefHeight="940.0" prefWidth="332.0" />
+            <Pane id="pane" prefHeight="940.0" prefWidth="1365.0" />
             <VBox prefHeight="943.0" prefWidth="211.0">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
                <children>
-                  <Button id="buttons" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="185.0" text="Редактировать">
+                  <Button id="buttons" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="185.0" styleClass="redactor" text="Редактировать">
                      <VBox.margin>
                         <Insets left="10.0" top="300.0" />
                      </VBox.margin>
@@ -51,7 +47,7 @@
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" text="Удалить">
+                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="delete" text="Удалить">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -59,7 +55,7 @@
                         <Insets left="10.0" top="60.0" />
                      </VBox.margin>
                   </Button>
-                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" text="Создать">
+                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="create" text="Создать">
                      <font>
                         <Font size="22.0" />
                      </font>

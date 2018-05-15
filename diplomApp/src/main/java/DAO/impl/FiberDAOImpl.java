@@ -19,7 +19,7 @@ public class FiberDAOImpl implements FiberDAO {
 
     public void addFiber(FiberEntity fiberEntity) throws SQLException {
         Session session = daoUtils.createTransaction();
-        session.save(fiberEntity);
+        session.saveOrUpdate(fiberEntity);
         daoUtils.closeSession(session);
     }
 
