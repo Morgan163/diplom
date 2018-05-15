@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
@@ -33,7 +34,11 @@
       <HBox prefHeight="940.0" prefWidth="1920.0">
          <children>
             <ListView id="list" prefHeight="940.0" prefWidth="332.0" />
-            <Pane id="pane" prefHeight="940.0" prefWidth="1365.0" />
+            <Pane id="pane" prefHeight="940.0" prefWidth="1365.0">
+               <children>
+                  <Circle id="source" fill="DODGERBLUE" radius="66.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </Pane>
             <VBox prefHeight="943.0" prefWidth="211.0">
                <HBox.margin>
                   <Insets />

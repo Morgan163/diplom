@@ -24,20 +24,25 @@ import model.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static fxml.DrawingUtil.START_X;
+import static fxml.DrawingUtil.START_Y;
 
 
 public class RedactorPage extends Application {
+    private double currentX = START_X;
+    private double currentY = START_Y;
     private DatabaseController databaseController = new DatabaseController();
+    private DrawingUtil drawingUtil = new DrawingUtil();
 
     private static final int BREG_RADIUS = 25;
     private static final double TEXT_FIELD_WIDTH = 60;
     private static final double TEXT_FIELD_HEIGHT = 25;
     private static final String START = "start";
     private static final String END = "end";
+    private static final String CREATE = "CREATE";
+    private static final String REDACT = "REDACT";
 
     private Button breg;
     private Button topology;
@@ -74,6 +79,17 @@ public class RedactorPage extends Application {
     private Circle focusCircle;
     private Line focusLine;
 
+    private TopologyUtil topologyUtil;
+    private String command;
+
+    public RedactorPage(String command) {
+        this.command = command;
+    }
+
+    public RedactorPage(TopologyUtil topologyUtil, String command) {
+        this.topologyUtil = topologyUtil;
+        this.command = command;
+    }
 
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/redactorPage.fxml"));
@@ -102,8 +118,45 @@ public class RedactorPage extends Application {
         circleSensorEntityMap.put(source, new SensorEntity());
         pane = (Pane) root.lookup("#pane");
         drawInit();
+        if(command.equals(REDACT)){
+            drawTopology();
+        }
     }
 
+    private void drawTopology(){
+        List<RelatedSensorsEntity> relatedSensorsEntities = new ArrayList<>(
+                topologyUtil.getRelatedSensorsEntitySet());
+        //Collections.copy(relatedSensorsEntities, topologyUtil.getRelatedSensorsEntitySet());
+        Queue<SensorEntity> sensorEntityQueue = new LinkedList<>();
+        sensorEntityQueue.add(topologyUtil.getTopologiesEntity().getSensorBySensor());
+        Queue<Circle> circles = new LinkedList<>();
+        circles.offer(source);
+
+        while (sensorEntityQueue.size() != 0) {
+            Circle circle = circles.poll();
+            Queue<RelatedSensorsEntity> forDraw = new LinkedList<>();
+            SensorEntity sensorEntity = sensorEntityQueue.poll();
+            drawingUtil.searchSensors(sensorEntityQueue, forDraw, relatedSensorsEntities, sensorEntity);
+            while (forDraw.size() != 0) {
+                RelatedSensorsEntity relatedSensorsEntity = forDraw.poll();
+                Circle circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
+                        relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
+                usageCircle(circle, relatedSensorsEntity.getSensorBySensor2Id());
+                circles.offer(circle2);
+                currentY += DrawingUtil.dy;
+                Line line = drawingUtil.drawTopology(circle, true, pane, lineTextMap, true,
+                        relatedSensorsEntity.getFiberByFiberId().getLength().toString(), null);
+                usageLineStart(circle, relatedSensorsEntity);
+                drawingUtil.drawTopology(circle2, false, pane, lineTextMap, true,
+                        relatedSensorsEntity.getFiberByFiberId().getLength().toString(), line);
+                usageLineFinish(circle2);
+            }
+            currentY = START_Y;
+            currentX+=DrawingUtil.dx;
+        }
+        currentY = START_Y;
+        currentX = START_X;
+    }
 
     private void drawInit() {
         Image image = new Image("/image/light.jpg");
@@ -208,25 +261,17 @@ public class RedactorPage extends Application {
     }
 
     private void drawBreg(MouseEvent event) {
-        Image image = new Image("/image/grid.jpg");
-        Circle circle = new Circle(event.getSceneX(), event.getSceneY() - BREG_RADIUS, BREG_RADIUS,
-                new ImagePattern(image));
-        circleSensorEntityMap.put(circle, new SensorEntity());
+        Circle circle = drawingUtil.drawBreg(event.getSceneX(), event.getScreenY()- 3*BREG_RADIUS, pane,
+                circleTextMap, false, "" );
+        usageCircle(circle, new SensorEntity());
+        bregClick = false;
+    }
+
+    private void usageCircle(Circle circle, SensorEntity sensorEntity){
+        circleSensorEntityMap.put(circle, sensorEntity);
         circle.setOnMousePressed(e -> bregPressed(e, circle));
         circle.setOnMouseDragged(e -> bregDrag(e, circle));
         circle.setOnMouseClicked(e -> bregClick(e, circle));
-
-        TextField textField = new TextField();
-        textField.setMinSize(TEXT_FIELD_WIDTH, TEXT_FIELD_HEIGHT);
-        textField.setMaxSize(TEXT_FIELD_WIDTH, TEXT_FIELD_HEIGHT);
-        textField.setLayoutX(circle.getCenterX() - TEXT_FIELD_WIDTH / 2);
-        textField.setLayoutY(circle.getCenterY() - BREG_RADIUS * 2);
-        textField.setVisible(false);
-        circleTextMap.put(circle, textField);
-
-        pane.getChildren().add(circle);
-        pane.getChildren().add(pane.getChildren().size() - 1, textField);
-        bregClick = false;
     }
 
     private void bregPressed(MouseEvent event, Circle circle) {
@@ -343,46 +388,37 @@ public class RedactorPage extends Application {
 
     private void drawTopology(Circle circle) {
         if (topologyStart) {
-            topologyStartX = circle.getCenterX();
-            topologyStartY = circle.getCenterY();
+            line = drawingUtil.drawTopology(circle, topologyStart, pane, lineTextMap, false, "", null);
+            usageLineStart(circle, new RelatedSensorsEntity());
             topologyStart = false;
-            line = new Line();
-            line.setStroke(Color.BLUE);
-            line.setStrokeWidth(7);
-            putToLineMap(circle, line, START);
-            List<Circle> circles = new ArrayList<>();
-            circles.add(circle);
-            lineCircleMap.put(line, circles);
-            relatedSensorsEntity = new RelatedSensorsEntity();
-            relatedSensorsEntity.setSensorBySensor1Id(circleSensorEntityMap.get(circle));
         } else {
-            relatedSensorsEntity.setSensorBySensor2Id(circleSensorEntityMap.get(circle));
-            lineFiberEntityMap.put(line, new FiberEntity());
-            relatedSensorsEntity.setFiberByFiberId(lineFiberEntityMap.get(line));
-            relatedSensorsEntities.add(relatedSensorsEntity);
-            relatedSensorsEntity = null;
-
-            lineCircleMap.get(line).add(circle);
-            line.setStartX(topologyStartX);
-            line.setStartY(topologyStartY);
-            line.setEndX(circle.getCenterX());
-            line.setEndY(circle.getCenterY());
-            line.setOnMouseClicked(this::topologyClick);
-            putToLineMap(circle, line, END);
+            line = drawingUtil.drawTopology(circle, topologyStart, pane, lineTextMap, false, "", line);
+            usageLineFinish(circle);
             topologyStart = true;
-            pane.getChildren().add(0, line);
             topologyClick = false;
-
-            TextField textField = new TextField();
-            textField.setMinSize(TEXT_FIELD_WIDTH, TEXT_FIELD_HEIGHT);
-            textField.setMaxSize(TEXT_FIELD_WIDTH, TEXT_FIELD_HEIGHT);
-            textField.setLayoutX((line.getEndX() + line.getStartX()) / 2 - TEXT_FIELD_WIDTH / 2);
-            textField.setLayoutY((line.getEndY() + line.getStartY()) / 2 - TEXT_FIELD_HEIGHT / 2);
-            textField.setVisible(false);
-            lineTextMap.put(line, textField);
-            pane.getChildren().add(pane.getChildren().size() - 1, textField);
             line = null;
         }
+    }
+
+    private void usageLineStart(Circle circle, RelatedSensorsEntity related){
+        putToLineMap(circle, line, START);
+        List<Circle> circles = new ArrayList<>();
+        circles.add(circle);
+        lineCircleMap.put(line, circles);
+        relatedSensorsEntity = related;
+        relatedSensorsEntity.setSensorBySensor1Id(circleSensorEntityMap.get(circle));
+    }
+
+    private void usageLineFinish(Circle circle){
+        relatedSensorsEntity.setSensorBySensor2Id(circleSensorEntityMap.get(circle));
+        lineFiberEntityMap.put(line, new FiberEntity());
+        relatedSensorsEntity.setFiberByFiberId(lineFiberEntityMap.get(line));
+        relatedSensorsEntities.add(relatedSensorsEntity);
+        relatedSensorsEntity = null;
+        lineCircleMap.get(line).add(circle);
+        line.setOnMouseClicked(this::topologyClick);
+        putToLineMap(circle, line, END);
+
     }
 
     private void putToLineMap(Circle circle, Line line, String position) {
