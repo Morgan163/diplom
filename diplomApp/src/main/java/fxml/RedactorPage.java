@@ -41,8 +41,8 @@ public class RedactorPage extends Application {
     private static final double TEXT_FIELD_HEIGHT = 25;
     private static final String START = "start";
     private static final String END = "end";
-    private static final String CREATE = "CREATE";
-    private static final String REDACT = "REDACT";
+    public static final String CREATE = "CREATE";
+    public static final String REDACT = "REDACT";
 
     private Button breg;
     private Button topology;
@@ -115,11 +115,13 @@ public class RedactorPage extends Application {
         source.setCenterX(69);
         source.setCenterY(416);
         source.setOnMouseClicked(e -> bregClick(e, source));
-        circleSensorEntityMap.put(source, new SensorEntity());
         pane = (Pane) root.lookup("#pane");
         drawInit();
         if(command.equals(REDACT)){
+            circleSensorEntityMap.put(source, topologyUtil.getTopologiesEntity().getSensorBySensor());
             drawTopology();
+        }else{
+            circleSensorEntityMap.put(source, new SensorEntity());
         }
     }
 
@@ -141,10 +143,10 @@ public class RedactorPage extends Application {
                 RelatedSensorsEntity relatedSensorsEntity = forDraw.poll();
                 Circle circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
                         relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
-                usageCircle(circle, relatedSensorsEntity.getSensorBySensor2Id());
+                usageCircle(circle2, relatedSensorsEntity.getSensorBySensor2Id());
                 circles.offer(circle2);
                 currentY += DrawingUtil.dy;
-                Line line = drawingUtil.drawTopology(circle, true, pane, lineTextMap, true,
+                line = drawingUtil.drawTopology(circle, true, pane, lineTextMap, true,
                         relatedSensorsEntity.getFiberByFiberId().getLength().toString(), null);
                 usageLineStart(circle, relatedSensorsEntity);
                 drawingUtil.drawTopology(circle2, false, pane, lineTextMap, true,

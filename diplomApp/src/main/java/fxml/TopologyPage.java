@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -43,10 +44,13 @@ public class TopologyPage extends Application {
     private Map<Circle, TextField> circleTextMap = new HashMap<>();
     private Map<Line, TextField> lineTextMap = new HashMap<>();
 
+    private Stage stage;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/topologyPage.fxml"));
         initialization(root);
+        stage = primaryStage;
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Редактор топологий");
         primaryStage.setScene(new Scene(root));
@@ -56,7 +60,10 @@ public class TopologyPage extends Application {
     private void initialization(Parent root) {
         redactor = (Button) root.lookup(".redactor");
         delete = (Button) root.lookup(".delete");
-        create = (Button) root.lookup("create");
+        create = (Button) root.lookup(".create");
+        redactor.setOnMouseClicked(this::redactorButtonButton);
+        delete.setOnMouseClicked(this::deleteButtonClick);
+        create.setOnMouseClicked(this::createButtonClick);
         topologyListView = (ListView<TopologyUtil>) root.lookup("#list");
         fillTopologyList();
         source = (Circle) root.lookup("#source");
@@ -65,6 +72,33 @@ public class TopologyPage extends Application {
         Image image = new Image("/image/light.jpg");
         source.setFill(new ImagePattern(image));
         pane = (Pane) root.lookup("#pane");
+    }
+
+    private void redactorButtonButton(MouseEvent event) {
+        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+            RedactorPage redactorPage = new RedactorPage(topologyListView.getSelectionModel().getSelectedItem(),
+                    RedactorPage.REDACT);
+            try {
+                redactorPage.start(stage);
+            } catch (Exception o_O) {
+                o_O.printStackTrace();
+            }
+        }
+    }
+
+    private void createButtonClick(MouseEvent event){
+        RedactorPage redactorPage = new RedactorPage(RedactorPage.CREATE);
+        try {
+            redactorPage.start(stage);
+        } catch (Exception o_O) {
+            System.out.println(o_O.getMessage());
+        }
+    }
+
+    private void deleteButtonClick(MouseEvent event){
+        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+
+        }
     }
 
     private void fillTopologyList() {

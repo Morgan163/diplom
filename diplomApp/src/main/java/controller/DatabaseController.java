@@ -41,4 +41,8 @@ public class DatabaseController {
     public void saveTopology(TopologyUtil topologyUtil) throws SQLException {
         topologiesDAO.addTopology(topologyUtil.getTopologiesEntity());
     }
+
+    public void deleteTopology(TopologyUtil topologyUtil){
+
+    }
 }
