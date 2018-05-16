@@ -140,9 +140,14 @@ public class RedactorPage extends Application {
             SensorEntity sensorEntity = sensorEntityQueue.poll();
             drawingUtil.searchSensors(sensorEntityQueue, forDraw, relatedSensorsEntities, sensorEntity);
             while (forDraw.size() != 0) {
+                Circle circle2;
                 RelatedSensorsEntity relatedSensorsEntity = forDraw.poll();
-                Circle circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
-                        relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
+                if(circleSensorEntityMap.containsValue(relatedSensorsEntity.getSensorBySensor2Id())){
+                   circle2 = getCircleBySensor(relatedSensorsEntity.getSensorBySensor2Id());
+                }else{
+                    circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
+                            relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
+                }
                 usageCircle(circle2, relatedSensorsEntity.getSensorBySensor2Id());
                 circles.offer(circle2);
                 currentY += DrawingUtil.dy;
@@ -158,6 +163,15 @@ public class RedactorPage extends Application {
         }
         currentY = START_Y;
         currentX = START_X;
+    }
+
+    private Circle getCircleBySensor(SensorEntity sensorEntity){
+        for(Map.Entry<Circle, SensorEntity> entry:circleSensorEntityMap.entrySet()){
+            if(entry.getValue().equals(sensorEntity)){
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 
     private void drawInit() {

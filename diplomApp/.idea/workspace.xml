@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,28 +82,28 @@
       <file leaf-file-name="RedactorPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="160" column="5" lean-forward="true" selection-start-line="127" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
+            <state relative-caret-position="410">
+              <caret line="144" column="27" lean-forward="true" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2810#2811#0" expanded="true" />
                 <element signature="e#2848#2849#0" expanded="true" />
-                <element signature="e#20039#20040#0" expanded="true" />
-                <element signature="e#20066#20067#0" expanded="true" />
-                <element signature="e#20106#20107#0" expanded="true" />
-                <element signature="e#20138#20139#0" expanded="true" />
-                <element signature="e#20173#20174#0" expanded="true" />
-                <element signature="e#20204#20205#0" expanded="true" />
-                <element signature="e#20252#20253#0" expanded="true" />
-                <element signature="e#20292#20293#0" expanded="true" />
-                <element signature="e#20324#20325#0" expanded="true" />
-                <element signature="e#20351#20352#0" expanded="true" />
-                <element signature="e#20391#20392#0" expanded="true" />
-                <element signature="e#20423#20424#0" expanded="true" />
-                <element signature="e#20458#20459#0" expanded="true" />
-                <element signature="e#20488#20489#0" expanded="true" />
-                <element signature="e#20535#20536#0" expanded="true" />
-                <element signature="e#20573#20574#0" expanded="true" />
+                <element signature="e#20604#20605#0" expanded="true" />
+                <element signature="e#20631#20632#0" expanded="true" />
+                <element signature="e#20671#20672#0" expanded="true" />
+                <element signature="e#20703#20704#0" expanded="true" />
+                <element signature="e#20738#20739#0" expanded="true" />
+                <element signature="e#20769#20770#0" expanded="true" />
+                <element signature="e#20817#20818#0" expanded="true" />
+                <element signature="e#20857#20858#0" expanded="true" />
+                <element signature="e#20889#20890#0" expanded="true" />
+                <element signature="e#20916#20917#0" expanded="true" />
+                <element signature="e#20956#20957#0" expanded="true" />
+                <element signature="e#20988#20989#0" expanded="true" />
+                <element signature="e#21023#21024#0" expanded="true" />
+                <element signature="e#21053#21054#0" expanded="true" />
+                <element signature="e#21100#21101#0" expanded="true" />
+                <element signature="e#21138#21139#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +131,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TopologyPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="635">
+              <caret line="143" column="94" lean-forward="false" selection-start-line="143" selection-start-column="94" selection-end-line="143" selection-end-column="94" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RelatedSensorsEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,7 +153,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorEntity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SensorEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/SensorEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
@@ -182,21 +196,11 @@
       <file leaf-file-name="DrawingUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="335">
+              <caret line="75" column="46" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/DatabaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="60" column="46" lean-forward="false" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -255,16 +259,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/topologyPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/model/TopologyUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/impl/SensorDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/SensorDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ModellingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
       </list>
     </option>
   </component>
@@ -729,7 +733,7 @@
       <workItem from="1525247223960" duration="17542000" />
       <workItem from="1526316003347" duration="9374000" />
       <workItem from="1526377861248" duration="25756000" />
-      <workItem from="1526469058607" duration="11259000" />
+      <workItem from="1526469058607" duration="13403000" />
     </task>
     <task id="LOCAL-00001" summary="Added gui forms">
       <created>1525639781753</created>
@@ -794,11 +798,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526501413392</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix save to database">
+      <created>1526502992604</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526502992604</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95719000" />
+    <option name="totallyTimeSpent" value="97863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -814,7 +825,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49313357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49313357" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -878,31 +889,31 @@
     <MESSAGE value="Added gui forms" />
     <MESSAGE value="Bug fix" />
     <MESSAGE value="Added save" />
-    <MESSAGE value="fix save to database" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="draw from database" />
     <MESSAGE value="redacting graph" />
     <MESSAGE value="added modelling controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="added modelling controller" />
+    <MESSAGE value="fix save to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix save to database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>235</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>243</line>
+          <line>257</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>244</line>
+          <line>258</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -926,91 +937,91 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>197</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>196</line>
+          <line>210</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>236</line>
+          <line>250</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>234</line>
+          <line>248</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>233</line>
+          <line>247</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>232</line>
+          <line>246</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java</url>
-          <line>231</line>
+          <line>245</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>77</line>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>78</line>
+          <line>79</line>
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>79</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>80</line>
+          <line>81</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>81</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>82</line>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>83</line>
+          <line>84</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java</url>
-          <line>84</line>
+          <line>85</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
@@ -1286,16 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2075">
-          <caret line="83" column="38" lean-forward="false" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/impl/RelatedSensorsDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -1319,44 +1320,6 @@
         <state relative-caret-position="785">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="160" column="5" lean-forward="true" selection-start-line="127" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2810#2811#0" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#20039#20040#0" expanded="true" />
-            <element signature="e#20066#20067#0" expanded="true" />
-            <element signature="e#20106#20107#0" expanded="true" />
-            <element signature="e#20138#20139#0" expanded="true" />
-            <element signature="e#20173#20174#0" expanded="true" />
-            <element signature="e#20204#20205#0" expanded="true" />
-            <element signature="e#20252#20253#0" expanded="true" />
-            <element signature="e#20292#20293#0" expanded="true" />
-            <element signature="e#20324#20325#0" expanded="true" />
-            <element signature="e#20351#20352#0" expanded="true" />
-            <element signature="e#20391#20392#0" expanded="true" />
-            <element signature="e#20423#20424#0" expanded="true" />
-            <element signature="e#20458#20459#0" expanded="true" />
-            <element signature="e#20488#20489#0" expanded="true" />
-            <element signature="e#20535#20536#0" expanded="true" />
-            <element signature="e#20573#20574#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1423,6 +1386,54 @@
         <state relative-caret-position="250">
           <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="75" column="46" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="144" column="27" lean-forward="true" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+            <element signature="e#2848#2849#0" expanded="true" />
+            <element signature="e#20604#20605#0" expanded="true" />
+            <element signature="e#20631#20632#0" expanded="true" />
+            <element signature="e#20671#20672#0" expanded="true" />
+            <element signature="e#20703#20704#0" expanded="true" />
+            <element signature="e#20738#20739#0" expanded="true" />
+            <element signature="e#20769#20770#0" expanded="true" />
+            <element signature="e#20817#20818#0" expanded="true" />
+            <element signature="e#20857#20858#0" expanded="true" />
+            <element signature="e#20889#20890#0" expanded="true" />
+            <element signature="e#20916#20917#0" expanded="true" />
+            <element signature="e#20956#20957#0" expanded="true" />
+            <element signature="e#20988#20989#0" expanded="true" />
+            <element signature="e#21023#21024#0" expanded="true" />
+            <element signature="e#21053#21054#0" expanded="true" />
+            <element signature="e#21100#21101#0" expanded="true" />
+            <element signature="e#21138#21139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="143" column="94" lean-forward="false" selection-start-line="143" selection-start-column="94" selection-end-line="143" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
