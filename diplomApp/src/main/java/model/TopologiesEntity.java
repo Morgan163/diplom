@@ -6,10 +6,10 @@ import javax.persistence.*;
 @Table(name = "TOPOLOGIES", schema = "SYSTEM", catalog = "")
 public class TopologiesEntity {
     @Id
-    @SequenceGenerator(name="top_seq",
-            sequenceName="TOPOLOGY_SEQUENCE")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,
-            generator="top_seq")
+   /* @SequenceGenerator(name="top_seq",
+            sequenceName="TOPOLOGY_SEQUENCE")*/
+    @GeneratedValue(strategy=GenerationType.AUTO)/*(strategy=GenerationType.SEQUENCE,
+            generator="top_seq")*/
     @Column(name = "ID", nullable = false, precision = 0)
     private long id;
     @Basic

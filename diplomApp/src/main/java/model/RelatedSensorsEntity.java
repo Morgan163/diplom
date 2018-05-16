@@ -6,10 +6,10 @@ import javax.persistence.*;
 @Table(name = "RELATED_SENSORS", schema = "SYSTEM", catalog = "")
 public class RelatedSensorsEntity {
     @Id
-    @SequenceGenerator(name="rel_seq",
-            sequenceName="RELATED_SENSORS_SEQUENCE")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,
-            generator="rel_seq")
+    /*@SequenceGenerator(name="rel_seq",
+            sequenceName="RELATED_SENSORS_SEQUENCE")*/
+    @GeneratedValue(strategy=GenerationType.AUTO)/*(strategy=GenerationType.SEQUENCE,
+            generator="rel_seq")*/
     @Column(name = "ID", nullable = false, precision = 0)
     private long id;
     @ManyToOne

@@ -7,10 +7,10 @@ import java.util.Collection;
 @Table(name = "SENSOR", schema = "SYSTEM", catalog = "")
 public class SensorEntity {
     @Id
-    @SequenceGenerator(name="sensor_seq",
-            sequenceName="SYSTEM.SENSOR_SEQUENCE")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,
-            generator="sensor_seq")
+   /* @SequenceGenerator(name="sensor_seq",
+            sequenceName="SYSTEM.SENSOR_SEQUENCE")*/
+    @GeneratedValue(strategy=GenerationType.AUTO)/*(strategy=GenerationType.SEQUENCE,
+            generator="sensor_seq")*/
     @Column(name = "ID", nullable = false, precision = 0)
     private long id;
 

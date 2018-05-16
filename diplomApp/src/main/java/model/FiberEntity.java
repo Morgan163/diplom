@@ -7,10 +7,10 @@ import java.util.Collection;
 @Table(name = "FIBER", schema = "SYSTEM", catalog = "")
 public class FiberEntity {
     @Id
-    @SequenceGenerator(name="fiber_seq",
-            sequenceName="FIBER_SEQUENCE")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,
-            generator="fiber_seq")
+    /*@SequenceGenerator(name="fiber_seq",
+            sequenceName="FIBER_SEQUENCE")*/
+    @GeneratedValue(strategy=GenerationType.AUTO)/*(strategy=GenerationType.SEQUENCE,
+            generator="fiber_seq")*/
     @Column(name = "ID", nullable = false, precision = 0)
     private long id;
     @Basic
