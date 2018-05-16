@@ -4,9 +4,7 @@ import DAO.*;
 import model.*;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class DatabaseController {
     private TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
@@ -44,5 +42,22 @@ public class DatabaseController {
 
     public void deleteTopology(TopologyUtil topologyUtil){
 
+    }
+
+    public List<SensorEntity> getSensorsByTopology(TopologyUtil topologyUtil){
+        Set<SensorEntity> sensorEntities = new HashSet<>();
+        for(RelatedSensorsEntity relatedSensorsEntity:topologyUtil.getRelatedSensorsEntitySet()){
+            sensorEntities.add(relatedSensorsEntity.getSensorBySensor1Id());
+            sensorEntities.add(relatedSensorsEntity.getSensorBySensor2Id());
+        }
+        return new ArrayList<>(sensorEntities);
+    }
+
+    public List<FiberEntity> getFibersByTopology(TopologyUtil topologyUtil){
+        Set<FiberEntity> fiberEntities = new HashSet<>();
+        for(RelatedSensorsEntity relatedSensorsEntity:topologyUtil.getRelatedSensorsEntitySet()){
+            fiberEntities.add(relatedSensorsEntity.getFiberByFiberId());
+        }
+        return new ArrayList<>(fiberEntities);
     }
 }

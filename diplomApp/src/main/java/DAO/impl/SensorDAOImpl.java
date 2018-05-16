@@ -3,10 +3,12 @@ package DAO.impl;
 import DAO.SensorDAO;
 import DAO.impl.daoUtils.DaoUtils;
 import model.SensorEntity;
+import model.TopologiesEntity;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.CriteriaQuery;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -51,4 +53,5 @@ public class SensorDAOImpl implements SensorDAO {
         daoUtils.closeSession(session);
         return sensorEntities;
     }
+
 }
