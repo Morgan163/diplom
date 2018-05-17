@@ -44,13 +44,21 @@
                   <Insets />
                </HBox.margin>
                <children>
-                  <Button id="buttons" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="185.0" styleClass="redactor" text="Редактировать">
+                  <Button id="buttons" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="create" text="Создать" textAlignment="CENTER">
                      <VBox.margin>
                         <Insets left="10.0" top="300.0" />
                      </VBox.margin>
                      <font>
                         <Font size="22.0" />
                      </font>
+                  </Button>
+                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="redactor" text="Редактировать">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="60.0" />
+                     </VBox.margin>
                   </Button>
                   <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="delete" text="Удалить">
                      <font>
@@ -60,12 +68,12 @@
                         <Insets left="10.0" top="60.0" />
                      </VBox.margin>
                   </Button>
-                  <Button id="buttons" alignment="CENTER" mnemonicParsing="false" prefWidth="185.0" styleClass="create" text="Создать">
+                  <Button id="buttons" mnemonicParsing="false" styleClass="modelling" text="Моделировать">
                      <font>
-                        <Font size="22.0" />
+                        <Font size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="10.0" top="60.0" />
+                        <Insets left="5.0" top="200.0" />
                      </VBox.margin>
                   </Button>
                </children>

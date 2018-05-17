@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar id="menu-bar" VBox.vgrow="NEVER">
+            <menus>
+                <Menu id="menu-item" mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
+                    </items>
+                </Menu>
+                <Menu id="menu-item" mnemonicParsing="false" text="Справка">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Руководство" />
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" />
+                    </items>
+                </Menu>
+                <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
+            </menus>
+        </MenuBar>
+      <HBox prefHeight="140.0" prefWidth="1920.0" />
+        <HBox prefHeight="1097.0" prefWidth="1920.0">
+            <children>
+                <Pane id="pane" prefHeight="940.0" prefWidth="1685.0">
+               <children>
+                  <Circle id="source" fill="DODGERBLUE" layoutX="0.0" layoutY="0.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+                </Pane>
+                <VBox prefHeight="943.0" prefWidth="211.0">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <children>
+                  <Button id="buttons" mnemonicParsing="false" prefHeight="78.0" prefWidth="170.0" text="Сохранить">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label prefHeight="27.0" prefWidth="188.0" text="Название топологии">
+                     <VBox.margin>
+                        <Insets left="10.0" top="100.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField id="name-field" prefHeight="39.0" prefWidth="645.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                        <Button id="grid-button" mnemonicParsing="false" text="#">
+                            <VBox.margin>
+                                <Insets left="60.0" top="200.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button id="topology" mnemonicParsing="false" text="Топология">
+                            <VBox.margin>
+                                <Insets left="40.0" top="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <stylesheets>
+        <URL value="@BasicApplication.css" />
+    </stylesheets>
+    <styleClass>
+        <String fx:value="background" />
+        <String fx:value="label-bright" />
+    </styleClass>
+</VBox>

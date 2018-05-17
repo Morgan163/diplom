@@ -1,6 +1,7 @@
 package fxml;
 
 import controller.DatabaseController;
+import controller.ModellingController;
 import javafx.application.Application;
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
@@ -33,6 +34,7 @@ public class TopologyPage extends Application {
     private Button redactor;
     private Button delete;
     private Button create;
+    private Button model;
 
     private ListView<TopologyUtil> topologyListView;
     private Pane pane;
@@ -62,9 +64,11 @@ public class TopologyPage extends Application {
         redactor = (Button) root.lookup(".redactor");
         delete = (Button) root.lookup(".delete");
         create = (Button) root.lookup(".create");
+        model = (Button) root.lookup(".modelling");
         redactor.setOnMouseClicked(this::redactorButtonButton);
         delete.setOnMouseClicked(this::deleteButtonClick);
         create.setOnMouseClicked(this::createButtonClick);
+        model.setOnMouseClicked(this::modelButtonClick);
         topologyListView = (ListView<TopologyUtil>) root.lookup("#list");
         fillTopologyList();
         source = (Circle) root.lookup("#source");
@@ -102,6 +106,13 @@ public class TopologyPage extends Application {
         }
     }
 
+    private void modelButtonClick(MouseEvent event){
+        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+            ModellingController modellingController = new ModellingController();
+            modellingController.modelling(topologyListView.getSelectionModel().getSelectedItem());
+        }
+    }
+
     private void fillTopologyList() {
         try {
             List<TopologyUtil> topologyUtils = databaseController.getTopologies();
@@ -116,6 +127,7 @@ public class TopologyPage extends Application {
     }
 
     private void selectItemListener() {
+        circleSensorEntityMap = new HashMap<>();
         pane.getChildren().remove(0,pane.getChildren().size());
         pane.getChildren().add(source);
         TopologyUtil topologyUtil = topologyListView.getSelectionModel().getSelectedItem();

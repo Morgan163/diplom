@@ -24,6 +24,7 @@ public class ModellingController {
         fillMatrix(sensorEntities, matrix, ways, topologyUtil.getTopologiesEntity());
         searchWays(sensorEntities, matrix, ways);
         checkReserving(topologyUtil, matrix, sensorEntities);
+        System.out.println("that's all");
 
     }
 
@@ -138,4 +139,36 @@ public class ModellingController {
         }
     }
 
+
+    public Map<SensorEntity, List<Long>> getSensorWayMap() {
+        return sensorWayMap;
+    }
+
+    public void setSensorWayMap(Map<SensorEntity, List<Long>> sensorWayMap) {
+        this.sensorWayMap = sensorWayMap;
+    }
+
+    public DatabaseController getDatabaseController() {
+        return databaseController;
+    }
+
+    public void setDatabaseController(DatabaseController databaseController) {
+        this.databaseController = databaseController;
+    }
+
+    public List<RelatedSensorsEntity> getRelatedSensorsEntities() {
+        return relatedSensorsEntities;
+    }
+
+    public void setRelatedSensorsEntities(List<RelatedSensorsEntity> relatedSensorsEntities) {
+        this.relatedSensorsEntities = relatedSensorsEntities;
+    }
+
+    public Map<SensorEntity, Integer> getReserv() {
+        return reserv;
+    }
+
+    public void setReserv(Map<SensorEntity, Integer> reserv) {
+        this.reserv = reserv;
+    }
 }

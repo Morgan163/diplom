@@ -141,22 +141,24 @@ public class RedactorPage extends Application {
             drawingUtil.searchSensors(sensorEntityQueue, forDraw, relatedSensorsEntities, sensorEntity);
             while (forDraw.size() != 0) {
                 Circle circle2;
-                RelatedSensorsEntity relatedSensorsEntity = forDraw.poll();
-                if(circleSensorEntityMap.containsValue(relatedSensorsEntity.getSensorBySensor2Id())){
-                   circle2 = getCircleBySensor(relatedSensorsEntity.getSensorBySensor2Id());
+                RelatedSensorsEntity relatedEntity = forDraw.poll();
+                if(circleSensorEntityMap.containsValue(relatedEntity.getSensorBySensor2Id())){
+                   circle2 = getCircleBySensor(relatedEntity.getSensorBySensor2Id());
                 }else{
                     circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
-                            relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
+                            relatedEntity.getSensorBySensor2Id().getWave().toString());
                 }
-                usageCircle(circle2, relatedSensorsEntity.getSensorBySensor2Id());
+                usageCircle(circle2, relatedEntity.getSensorBySensor2Id());
                 circles.offer(circle2);
+                Long l = relatedEntity.getFiberByFiberId().getLength();
+                String way =  l.toString();
                 currentY += DrawingUtil.dy;
                 line = drawingUtil.drawTopology(circle, true, pane, lineTextMap, true,
-                        relatedSensorsEntity.getFiberByFiberId().getLength().toString(), null);
-                usageLineStart(circle, relatedSensorsEntity);
+                       way, null);
+                usageLineStart(circle, relatedEntity);
                 drawingUtil.drawTopology(circle2, false, pane, lineTextMap, true,
-                        relatedSensorsEntity.getFiberByFiberId().getLength().toString(), line);
-                usageLineFinish(circle2);
+                        relatedEntity.getFiberByFiberId().getLength().toString(), line);
+                usageLineFinish(circle2, relatedEntity.getFiberByFiberId());
             }
             currentY = START_Y;
             currentX+=DrawingUtil.dx;
@@ -409,7 +411,7 @@ public class RedactorPage extends Application {
             topologyStart = false;
         } else {
             line = drawingUtil.drawTopology(circle, topologyStart, pane, lineTextMap, false, "", line);
-            usageLineFinish(circle);
+            usageLineFinish(circle, new FiberEntity());
             topologyStart = true;
             topologyClick = false;
             line = null;
@@ -425,9 +427,9 @@ public class RedactorPage extends Application {
         relatedSensorsEntity.setSensorBySensor1Id(circleSensorEntityMap.get(circle));
     }
 
-    private void usageLineFinish(Circle circle){
+    private void usageLineFinish(Circle circle, FiberEntity newFiber){
         relatedSensorsEntity.setSensorBySensor2Id(circleSensorEntityMap.get(circle));
-        lineFiberEntityMap.put(line, new FiberEntity());
+        lineFiberEntityMap.put(line, newFiber);
         relatedSensorsEntity.setFiberByFiberId(lineFiberEntityMap.get(line));
         relatedSensorsEntities.add(relatedSensorsEntity);
         relatedSensorsEntity = null;
