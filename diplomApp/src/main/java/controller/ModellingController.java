@@ -11,10 +11,14 @@ public class ModellingController {
     private DatabaseController databaseController = new DatabaseController();
     private List<RelatedSensorsEntity> relatedSensorsEntities;
     private Map<SensorEntity, Integer> reserv = new HashMap<>();
+    private Map<SensorEntity, Boolean> reservCheck = new HashMap<>();
     private int[][] matrix;
 
     public void modelling(TopologyUtil topologyUtil) {
         List<SensorEntity> sensorEntities = databaseController.getSensorsByTopology(topologyUtil);
+        for (SensorEntity sensorEntity : sensorEntities) {
+            reservCheck.put(sensorEntity, true);
+        }
         relatedSensorsEntities = topologyUtil.getRelatedSensorsEntitySet();
         matrix = new int[sensorEntities.size()][sensorEntities.size()];
         Long[][] ways = new Long[sensorEntities.size()][sensorEntities.size()];
@@ -90,12 +94,12 @@ public class ModellingController {
 
         // Recur for all the vertices
         // adjacent to current vertex
-        int i=0;
+        int i = 0;
         for (int j : matrix[sensorEntities.indexOf(source)]) {
-            if ((!isVisited.containsKey(sensorEntities.get(i)))||(!isVisited.get(sensorEntities.get(i)))) {
+            if ((!isVisited.containsKey(sensorEntities.get(i))) || (!isVisited.get(sensorEntities.get(i)))) {
                 // store current node
                 // in path[]
-                if(j!=0) {
+                if (j != 0) {
                     localPathList += getFiberBySensors(source, sensorEntities.get(i)).getLength();
                     pathList.add(getFiberBySensors(source, sensorEntities.get(i)).getLength());
                     printAllPathsUtil(sensorEntities.get(i), dest, isVisited, localPathList, sensorEntities,
@@ -114,9 +118,9 @@ public class ModellingController {
         isVisited.replace(source, false);
     }
 
-    private void print(List<Long> path){
-        for(Long l:path){
-            System.out.print(path+", ");
+    private void print(List<Long> path) {
+        for (Long l : path) {
+            System.out.print(path + ", ");
         }
         System.out.println();
     }
@@ -126,13 +130,13 @@ public class ModellingController {
         for (int i = 0; i < sensorEntities.size() * 2; i++) {
             value = rowMatrix(sensorEntities, value, matrix, ways, false);
         }*/
-       for(SensorEntity sensorEntity:sensorEntities){
-           Long result =0L;
-           if(sensorEntities.indexOf(sensorEntity)!=0){
-               printAllPathsUtil(sensorEntities.get(0), sensorEntity, new HashMap<>(),result, sensorEntities,
-                       new ArrayList<>());
-           }
-       }
+        for (SensorEntity sensorEntity : sensorEntities) {
+            Long result = 0L;
+            if (sensorEntities.indexOf(sensorEntity) != 0) {
+                printAllPathsUtil(sensorEntities.get(0), sensorEntity, new HashMap<>(), result, sensorEntities,
+                        new ArrayList<>());
+            }
+        }
     }
 
     private int[][] rowMatrix(List<SensorEntity> sensorEntities, int[][] value, int[][] matrix,
@@ -154,7 +158,7 @@ public class ModellingController {
                 && (o.getSensorBySensor1Id().equals(sensorEntity1)))).forEach(
                 o -> fiberEntity.add(o.getFiberByFiberId())
         );
-        if(fiberEntity.size()==0){
+        if (fiberEntity.size() == 0) {
             relatedSensorsEntities.stream().filter(o -> ((o.getSensorBySensor1Id().equals(sensorEntity2))
                     && (o.getSensorBySensor2Id().equals(sensorEntity1)))).forEach(
                     o -> fiberEntity.add(o.getFiberByFiberId())
@@ -182,7 +186,7 @@ public class ModellingController {
             List<Long> longs = new ArrayList<>();
             longs.add(way);
             sensorWayMap.put(sensorEntity, longs);
-          /*  wayOfSensors.get(sensorWayMap.get(sensorEntity).indexOf(way)).add(sensorEntity);*/
+            /*  wayOfSensors.get(sensorWayMap.get(sensorEntity).indexOf(way)).add(sensorEntity);*/
             return sensorWayMap.get(sensorEntity).indexOf(way);
         }
     }
@@ -195,10 +199,15 @@ public class ModellingController {
             List<SensorEntity> remove = getSensorsByFiber(fiberEntity);
             value[sensorEntities.indexOf(remove.get(0))][sensorEntities.indexOf(remove.get(1))] = 0;
             value[sensorEntities.indexOf(remove.get(1))][sensorEntities.indexOf(remove.get(0))] = 0;
+            matrix[sensorEntities.indexOf(remove.get(0))][sensorEntities.indexOf(remove.get(1))] = 0;
+            matrix[sensorEntities.indexOf(remove.get(1))][sensorEntities.indexOf(remove.get(0))] = 0;
             for (int i = 0; i < sensorEntities.size() * 2; i++) {
                 value = rowMatrix(sensorEntities, value, matrix, true);
+                checkMatrix(value, sensorEntities, j);
             }
-            checkMatrix(value, sensorEntities, j);
+            matrix[sensorEntities.indexOf(remove.get(0))][sensorEntities.indexOf(remove.get(1))] = 1;
+            matrix[sensorEntities.indexOf(remove.get(1))][sensorEntities.indexOf(remove.get(0))] = 1;
+            reservCheckTrue(sensorEntities);
         }
     }
 
@@ -212,15 +221,22 @@ public class ModellingController {
         return value;
     }
 
-    private void checkMatrix(int[][] matrix, List<SensorEntity> sensorEntities, int count) {
-        for (int j = 0; j < matrix[0].length; j++) {
-            if(reserv.containsKey(sensorEntities.get(j))) {
-                if ((matrix[0][j] != 0) && (reserv.get(sensorEntities.get(j)) != count)) {
+    private void checkMatrix(int[][] value, List<SensorEntity> sensorEntities, int count) {
+        for (int j = 0; j < value[0].length; j++) {
+            if ((value[0][j] != 0)&&(reservCheck.get(sensorEntities.get(j)))) {
+                if (reserv.containsKey(sensorEntities.get(j))) {
                     reserv.replace(sensorEntities.get(j), reserv.get(sensorEntities.get(j)) + 1);
+                } else {
+                    reserv.put(sensorEntities.get(j), 1);
                 }
-            }else{
-                reserv.put(sensorEntities.get(j),1);
+                reservCheck.replace(sensorEntities.get(j),false);
             }
+        }
+    }
+
+    private void reservCheckTrue(List<SensorEntity> sensorEntities) {
+        for (SensorEntity sensorEntity : sensorEntities) {
+            reservCheck.replace(sensorEntity, true);
         }
     }
 
