@@ -50,7 +50,10 @@ public class DatabaseController {
             sensorEntities.add(relatedSensorsEntity.getSensorBySensor1Id());
             sensorEntities.add(relatedSensorsEntity.getSensorBySensor2Id());
         }
-        return new ArrayList<>(sensorEntities);
+        List<SensorEntity> list = new ArrayList<>(sensorEntities);
+        list.remove(topologyUtil.getTopologiesEntity().getSensorBySensor());
+        list.add(0, topologyUtil.getTopologiesEntity().getSensorBySensor());
+        return list;
     }
 
     public List<FiberEntity> getFibersByTopology(TopologyUtil topologyUtil){

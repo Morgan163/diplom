@@ -31,57 +31,49 @@
                 <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
             </menus>
         </MenuBar>
-      <HBox prefHeight="140.0" prefWidth="1920.0" />
-        <HBox prefHeight="1097.0" prefWidth="1920.0">
-            <children>
-                <Pane id="pane" prefHeight="940.0" prefWidth="1685.0">
+      <ScrollPane prefHeight="943.0" prefWidth="1920.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Circle id="source" fill="DODGERBLUE" layoutX="0.0" layoutY="0.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" />
+                  <TabPane prefHeight="941.0" prefWidth="1920.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab styleClass="rightData" text="Достоверность данных">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView layoutX="6.0" layoutY="7.0" prefHeight="124.0" prefWidth="159.0" styleClass="table">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab styleClass="reservTab" text="Резервирование">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView prefHeight="200.0" prefWidth="200.0" styleClass="reserv">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="C1" />
+                                        <TableColumn prefWidth="75.0" text="C2" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
                </children>
-                </Pane>
-                <VBox prefHeight="943.0" prefWidth="211.0">
-                    <HBox.margin>
-                        <Insets />
-                    </HBox.margin>
-                    <children>
-                  <Button id="buttons" mnemonicParsing="false" prefHeight="78.0" prefWidth="170.0" text="Сохранить">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Label prefHeight="27.0" prefWidth="188.0" text="Название топологии">
-                     <VBox.margin>
-                        <Insets left="10.0" top="100.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField id="name-field" prefHeight="39.0" prefWidth="645.0">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                        <Button id="grid-button" mnemonicParsing="false" text="#">
-                            <VBox.margin>
-                                <Insets left="60.0" top="200.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font size="24.0" />
-                            </font>
-                        </Button>
-                        <Button id="topology" mnemonicParsing="false" text="Топология">
-                            <VBox.margin>
-                                <Insets left="40.0" top="100.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font size="24.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
     </children>
     <stylesheets>
         <URL value="@BasicApplication.css" />
