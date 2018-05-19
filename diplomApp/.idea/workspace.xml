@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fxml/Main.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add tutorial">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../css/all.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../css/printed.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0031.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0032.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0044.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0411.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0412.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0414.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0415.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0416.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0417.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0418.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041a.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041b.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041c.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041d.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041e.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu041f.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0420.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0421.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0422.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0423.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu0427.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/0xu042d.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/ids.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../de_search/prefixes.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/tutorial/tutorial.chm" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/interface-icons/delicious_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/interface-icons/digg-button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/interface-icons/interface-icons-sprite-8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/interface-icons/interface-icons-sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/search/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/splitter/splitter-sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/tree/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/blocks/work-zone/header-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../i/null.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/all.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/all2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/drexplain.data.index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/oembed.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/socialscript.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../js/tooltips.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../Интерфейс/Безымянный.png" />
+      <change beforePath="$PROJECT_DIR$/../5c4ca22e7b52.jpg" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/DatabaseController.java" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/ModelPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/ModelPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/startPage.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/startPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/topologyPage.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/topologyPage.fxml" />
+      <change beforePath="$PROJECT_DIR$/../post-9999-0-42993100-1517469720.jpg" afterPath="" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,7 +155,7 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+              <caret line="56" column="52" lean-forward="false" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -136,16 +175,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ModelPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fxml/ModelPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="1475">
               <caret line="107" column="64" lean-forward="false" selection-start-line="107" selection-start-column="64" selection-end-line="107" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1330#1331#0" expanded="true" />
                 <element signature="e#1392#1393#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="57" column="54" lean-forward="false" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,11 +234,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DrawingUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DrawingUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="141" column="27" lean-forward="false" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
+            <state relative-caret-position="710">
+              <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,16 +251,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="713" column="22" lean-forward="false" selection-start-line="713" selection-start-column="22" selection-end-line="713" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuItem.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/javafx-src.zip!/javafx/scene/control/MenuItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="102" column="13" lean-forward="false" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -265,7 +304,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/BasicApplication.css" />
         <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/redactorPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
@@ -288,6 +326,7 @@
         <option value="$PROJECT_DIR$/src/main/java/fxml/ModelPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java" />
       </list>
     </option>
@@ -453,6 +492,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="fxml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplomApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplomApp" type="b2602c69:ProjectViewProjectNode" />
@@ -777,7 +824,7 @@
       <workItem from="1526572063560" duration="9764000" />
       <workItem from="1526653144594" duration="18096000" />
       <workItem from="1526719176131" duration="1849000" />
-      <workItem from="1526721175902" duration="23624000" />
+      <workItem from="1526721175902" duration="26406000" />
     </task>
     <task id="LOCAL-00001" summary="Added gui forms">
       <created>1525639781753</created>
@@ -891,11 +938,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526741388654</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="modellingPage change">
+      <created>1526755728718</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1526755728742</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151230000" />
+    <option name="totallyTimeSpent" value="154012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -1176,14 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="51" column="54" lean-forward="false" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/3a9a06d9/fffb1a02-92a8-4f03-a0f4-9572106f56d4/SYSTEM.FIBER">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1252,6 +1298,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#245#246#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1386,18 +1436,18 @@
         <state relative-caret-position="3925">
           <caret line="159" column="10" lean-forward="true" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="10" />
           <folding>
-            <element signature="e#11230#11231#0" expanded="true" />
-            <element signature="e#11265#11266#0" expanded="true" />
-            <element signature="e#11344#11345#0" expanded="true" />
-            <element signature="e#11392#11393#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
-            <element signature="e#11490#11491#0" expanded="true" />
-            <element signature="e#11699#11700#0" expanded="true" />
-            <element signature="e#11744#11745#0" expanded="true" />
-            <element signature="e#11961#11962#0" expanded="true" />
-            <element signature="e#11990#11991#0" expanded="true" />
-            <element signature="e#12054#12055#0" expanded="true" />
-            <element signature="e#12090#12091#0" expanded="true" />
+            <element signature="e#11230#11231#0" expanded="false" />
+            <element signature="e#11265#11266#0" expanded="false" />
+            <element signature="e#11344#11345#0" expanded="false" />
+            <element signature="e#11392#11393#0" expanded="false" />
+            <element signature="e#11449#11450#0" expanded="false" />
+            <element signature="e#11490#11491#0" expanded="false" />
+            <element signature="e#11699#11700#0" expanded="false" />
+            <element signature="e#11744#11745#0" expanded="false" />
+            <element signature="e#11961#11962#0" expanded="false" />
+            <element signature="e#11990#11991#0" expanded="false" />
+            <element signature="e#12054#12055#0" expanded="false" />
+            <element signature="e#12090#12091#0" expanded="false" />
             <marker date="1526673435825" expanded="true" signature="9039:10071" ph="{...}" />
           </folding>
         </state>
@@ -1540,35 +1590,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="141" column="27" lean-forward="false" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/modellingPage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+          <caret line="56" column="52" lean-forward="false" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="57" column="54" lean-forward="false" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fxml/ModelPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="1475">
           <caret line="107" column="64" lean-forward="false" selection-start-line="107" selection-start-column="64" selection-end-line="107" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1330#1331#0" expanded="true" />
             <element signature="e#1392#1393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fxml/DrawingUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

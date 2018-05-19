@@ -118,7 +118,13 @@ public class DrawingUtil {
                 System.out.println(o_O.getMessage());
             }
         });
-        menuBar.getMenus().get(1).getItems().get(0).setOnAction(e -> {});//Руководство
+        menuBar.getMenus().get(1).getItems().get(0).setOnAction(e -> {
+            try {
+                Runtime.getRuntime().exec("hh.exe tutorial/tutorial.chm");
+            } catch (IOException o_O) {
+                System.out.println(o_O.getMessage());
+            }
+        });//Руководство
         menuBar.getMenus().get(1).getItems().get(1).setOnAction(e -> {//Справка о программе
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("О программе");
