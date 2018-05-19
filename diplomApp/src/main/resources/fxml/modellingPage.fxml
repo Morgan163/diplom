@@ -41,11 +41,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView layoutX="6.0" layoutY="7.0" prefHeight="124.0" prefWidth="159.0" styleClass="table">
-                                      <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
-                                      </columns>
+                                    <TableView layoutX="6.0" layoutY="7.0" prefHeight="888.0" prefWidth="1914.0" styleClass="table">
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
@@ -58,12 +54,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView prefHeight="200.0" prefWidth="200.0" styleClass="reserv">
-                                      <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
-                                      </columns>
-                                    </TableView>
+                                    <TableView prefHeight="892.0" prefWidth="564.0" styleClass="reserv" />
                                  </children>
                               </AnchorPane>
                         </content>

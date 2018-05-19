@@ -110,6 +110,12 @@ public class TopologyPage extends Application {
         if(topologyListView.getSelectionModel().getSelectedItem()!=null){
             ModellingController modellingController = new ModellingController();
             modellingController.modelling(topologyListView.getSelectionModel().getSelectedItem());
+            ModelPage modelPage = new ModelPage(modellingController);
+            try {
+                modelPage.start(stage);
+            } catch (Exception o_O) {
+                o_O.printStackTrace();
+            }
         }
     }
 
