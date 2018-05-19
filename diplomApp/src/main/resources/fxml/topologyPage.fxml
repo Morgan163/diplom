@@ -28,7 +28,6 @@
                   <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" />
           </items>
         </Menu>
-            <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
       </menus>
     </MenuBar>
       <HBox prefHeight="940.0" prefWidth="1920.0">

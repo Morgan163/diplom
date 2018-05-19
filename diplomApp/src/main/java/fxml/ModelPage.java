@@ -39,12 +39,15 @@ public class ModelPage extends Application {
     private List<Long> timesList;
     private Map<Long, List<String>> sensorEntityListMap;
 
+    private Stage stage;
+
     public ModelPage(ModellingController modellingController) {
         this.modellingController = modellingController;
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/modellingPage.fxml"));
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Моделирование");
@@ -54,6 +57,7 @@ public class ModelPage extends Application {
     }
 
     private void initialization(Parent root) {
+        DrawingUtil.initMenu(root, stage);
         waweWayTable = (TableView) root.lookup(".table");
         reservTable = (TableView) root.lookup(".reserv");
         createDatas(modellingController.getSensorWayMap());

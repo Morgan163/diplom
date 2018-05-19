@@ -3,9 +3,6 @@ package fxml;
 import controller.DatabaseController;
 import controller.ModellingController;
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +19,14 @@ import javafx.stage.Stage;
 import model.RelatedSensorsEntity;
 import model.SensorEntity;
 import model.TopologyUtil;
-import org.hibernate.mapping.Collection;
 
 import java.sql.SQLException;
 import java.util.*;
 
 public class TopologyPage extends Application {
+    public static final String MODEL="MODEL";
+    public static final String TOPOLOGY = "TOPOLOGY";
+
     private double currentX = DrawingUtil.START_X;
     private double currentY = DrawingUtil.START_Y;
 
@@ -48,6 +47,11 @@ public class TopologyPage extends Application {
     private Map<Circle, SensorEntity> circleSensorEntityMap = new HashMap<>();
 
     private Stage stage;
+    private String command;
+
+    public TopologyPage(String command) {
+        this.command = command;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -61,10 +65,16 @@ public class TopologyPage extends Application {
     }
 
     private void initialization(Parent root) {
+        DrawingUtil.initMenu(root, stage);
         redactor = (Button) root.lookup(".redactor");
         delete = (Button) root.lookup(".delete");
         create = (Button) root.lookup(".create");
         model = (Button) root.lookup(".modelling");
+        if(command.equals(MODEL)){
+            delete.setVisible(false);
+        }else{
+            model.setVisible(false);
+        }
         redactor.setOnMouseClicked(this::redactorButtonButton);
         delete.setOnMouseClicked(this::deleteButtonClick);
         create.setOnMouseClicked(this::createButtonClick);
@@ -82,7 +92,7 @@ public class TopologyPage extends Application {
     private void redactorButtonButton(MouseEvent event) {
         if(topologyListView.getSelectionModel().getSelectedItem()!=null){
             RedactorPage redactorPage = new RedactorPage(topologyListView.getSelectionModel().getSelectedItem(),
-                    RedactorPage.REDACT);
+                    RedactorPage.REDACT, command);
             try {
                 redactorPage.start(stage);
             } catch (Exception o_O) {
@@ -92,7 +102,7 @@ public class TopologyPage extends Application {
     }
 
     private void createButtonClick(MouseEvent event){
-        RedactorPage redactorPage = new RedactorPage(RedactorPage.CREATE);
+        RedactorPage redactorPage = new RedactorPage(RedactorPage.CREATE, command);
         try {
             redactorPage.start(stage);
         } catch (Exception o_O) {
@@ -102,7 +112,12 @@ public class TopologyPage extends Application {
 
     private void deleteButtonClick(MouseEvent event){
         if(topologyListView.getSelectionModel().getSelectedItem()!=null){
-
+            try {
+                databaseController.deleteTopology(topologyListView.getSelectionModel().getSelectedItem());
+                topologyListView.getItems().remove(topologyListView.getSelectionModel().getSelectedItem());
+            } catch (SQLException o_O) {
+                System.out.println(o_O.getMessage());
+            }
         }
     }
 
@@ -157,7 +172,8 @@ public class TopologyPage extends Application {
                     circle2 = getCircleBySensor(relatedSensorsEntity.getSensorBySensor2Id());
                 }else{
                     circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
-                            relatedSensorsEntity.getSensorBySensor2Id().getWave().toString());
+                            relatedSensorsEntity.getSensorBySensor2Id().getWave().toString(),
+                            String.valueOf(relatedSensorsEntity.getSensorBySensor2Id().getId()));
                 }
                 circleSensorEntityMap.put(circle2, relatedSensorsEntity.getSensorBySensor2Id());
                 circles.offer(circle2);

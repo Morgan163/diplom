@@ -40,8 +40,20 @@ public class DatabaseController {
         topologiesDAO.addTopology(topologyUtil.getTopologiesEntity());
     }
 
-    public void deleteTopology(TopologyUtil topologyUtil){
-
+    public void deleteTopology(TopologyUtil topologyUtil) throws SQLException {
+        List<FiberEntity> fiberEntities = getFibersByTopology(topologyUtil);
+        List<SensorEntity> sensorEntities = getSensorsByTopology(topologyUtil);
+        List<RelatedSensorsEntity>relatedSensorsEntities = topologyUtil.getRelatedSensorsEntitySet();
+        topologiesDAO.deleteTopology(topologyUtil.getTopologiesEntity());
+        for(RelatedSensorsEntity relatedSensorsEntity:relatedSensorsEntities){
+            relatedSensorsDAO.deleteRelatedSensors(relatedSensorsEntity);
+        }
+        for(SensorEntity sensorEntity:sensorEntities){
+            sensorDAO.deleteSensor(sensorEntity);
+        }
+        for(FiberEntity f :fiberEntities){
+            fiberDAO.deleteFiber(f);
+        }
     }
 
     public List<SensorEntity> getSensorsByTopology(TopologyUtil topologyUtil){

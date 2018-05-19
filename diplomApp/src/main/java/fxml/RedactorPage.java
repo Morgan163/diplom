@@ -18,7 +18,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import model.*;
 import org.apache.commons.lang3.StringUtils;
@@ -81,17 +80,22 @@ public class RedactorPage extends Application {
 
     private TopologyUtil topologyUtil;
     private String command;
+    private String goal;
+    private Stage stage;
 
-    public RedactorPage(String command) {
+    public RedactorPage(String command, String goal) {
         this.command = command;
+        this.goal = goal;
     }
 
-    public RedactorPage(TopologyUtil topologyUtil, String command) {
+    public RedactorPage(TopologyUtil topologyUtil, String command, String goal) {
         this.topologyUtil = topologyUtil;
         this.command = command;
+        this.goal = goal;
     }
 
     public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/redactorPage.fxml"));
         initialization(root);
         pane.setOnMouseClicked(this::paneClick);
@@ -105,6 +109,7 @@ public class RedactorPage extends Application {
     }
 
     private void initialization(Parent root) {
+        DrawingUtil.initMenu(root, stage);
         breg = (Button) root.lookup("#grid-button");
         topology = (Button) root.lookup("#topology");
         save = (Button) root.lookup("#buttons");
@@ -126,6 +131,7 @@ public class RedactorPage extends Application {
     }
 
     private void drawTopology(){
+        name.setText(topologyUtil.getTopologiesEntity().getName());
         List<RelatedSensorsEntity> relatedSensorsEntities = new ArrayList<>(
                 topologyUtil.getRelatedSensorsEntitySet());
         //Collections.copy(relatedSensorsEntities, topologyUtil.getRelatedSensorsEntitySet());
@@ -146,7 +152,7 @@ public class RedactorPage extends Application {
                    circle2 = getCircleBySensor(relatedEntity.getSensorBySensor2Id());
                 }else{
                     circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
-                            relatedEntity.getSensorBySensor2Id().getWave().toString());
+                            relatedEntity.getSensorBySensor2Id().getWave().toString(), "");
                 }
                 usageCircle(circle2, relatedEntity.getSensorBySensor2Id());
                 circles.offer(circle2);
@@ -240,6 +246,12 @@ public class RedactorPage extends Application {
             } catch (SQLException o_O) {
                 System.out.println(o_O.getMessage());
             }
+            TopologyPage topologyPage = new TopologyPage(goal);
+            try {
+                topologyPage.start(stage);
+            } catch (Exception o_O) {
+                System.out.println(o_O);
+            }
         }
 
     }
@@ -280,7 +292,7 @@ public class RedactorPage extends Application {
 
     private void drawBreg(MouseEvent event) {
         Circle circle = drawingUtil.drawBreg(event.getSceneX(), event.getScreenY()- 3*BREG_RADIUS, pane,
-                circleTextMap, false, "" );
+                circleTextMap, false, "" , "");
         usageCircle(circle, new SensorEntity());
         bregClick = false;
     }
