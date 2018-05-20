@@ -23,6 +23,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +40,18 @@ public class DrawingUtil {
     private static final double TEXT_FIELD_HEIGHT = 25;
     private Line line;
 
+    public File file;
+
+    public DrawingUtil() {
+
+    }
+
     public Circle drawBreg(double x, double y, Pane pane, Map<Circle, TextField> circleTextMap,
                            boolean visible, String text, String id) {
         Image image = null;
-        if(StringUtils.isBlank(id)) {
+        if (StringUtils.isBlank(id)) {
             image = new Image("/image/grid.jpg");
-        }else{
+        } else {
             image = drawImage(id);
         }
         Circle circle = new Circle(x, y, BREG_RADIUS,
@@ -118,9 +125,20 @@ public class DrawingUtil {
                 System.out.println(o_O.getMessage());
             }
         });
+        menuBar.getMenus().get(0).getItems().get(2).setOnAction(e -> {
+            Main main = new Main();
+            try {
+                main.start(stage);
+            } catch (Exception o_O) {
+                System.out.println(o_O.getMessage());
+            }
+        });
         menuBar.getMenus().get(1).getItems().get(0).setOnAction(e -> {
             try {
-                Runtime.getRuntime().exec("hh.exe tutorial/tutorial.chm");
+                DrawingUtil drawingUtil = new DrawingUtil();
+                Desktop.getDesktop().open(new File("C:\\Users\\андрей\\Documents\\Диплом\\diplom\\diplomApp" +
+                        "\\src\\main\\resources\\tutorial\\tutorial.chm"));
+                //Runtime.getRuntime().exec("hh.exe tutorial/tutorial.chm");
             } catch (IOException o_O) {
                 System.out.println(o_O.getMessage());
             }
@@ -137,7 +155,7 @@ public class DrawingUtil {
         });
     }
 
-    private Image drawImage(String text){
+    private Image drawImage(String text) {
         try {
             BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/image/grid.jpg"));
             BufferedImage destinationImage = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(),
@@ -145,13 +163,13 @@ public class DrawingUtil {
             Graphics2D graphics = destinationImage.createGraphics();
             graphics.drawImage(bufferedImage, 0, 0, null);
             graphics.setColor(java.awt.Color.white);
-            graphics.drawRect(bufferedImage.getWidth()/2-12,bufferedImage.getHeight()/2+6, 30, 30 );
-            graphics.drawString(text, bufferedImage.getWidth()/2-12, bufferedImage.getHeight()/2+6);
+            graphics.drawRect(bufferedImage.getWidth() / 2 - 12, bufferedImage.getHeight() / 2 + 6, 30, 30);
+            graphics.drawString(text, bufferedImage.getWidth() / 2 - 12, bufferedImage.getHeight() / 2 + 6);
             graphics.setColor(java.awt.Color.black);
             graphics.setFont(new Font("Serif", java.awt.Font.BOLD, 30));
-            graphics.drawString(text, bufferedImage.getWidth()/2-15, bufferedImage.getHeight()/2+10);
+            graphics.drawString(text, bufferedImage.getWidth() / 2 - 15, bufferedImage.getHeight() / 2 + 10);
             graphics.dispose();
-            return SwingFXUtils.toFXImage(destinationImage, null );
+            return SwingFXUtils.toFXImage(destinationImage, null);
         } catch (IOException o_O) {
             System.out.println(o_O.getMessage());
         }

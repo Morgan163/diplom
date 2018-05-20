@@ -20,6 +20,8 @@
                <items>
                   <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
                   <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
+                   <MenuItem id="menu-item" mnemonicParsing="false" text="Стартовая страница"
+                             styleClass="menuStart"/>
                </items>
         </Menu>
         <Menu id="menu-item" mnemonicParsing="false" text="Справка">

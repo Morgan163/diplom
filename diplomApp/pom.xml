@@ -55,7 +55,7 @@
                                 <resource>
                                     <directory>src/main/java/resources/tutorial</directory>
                                     <includes>
-                                        <include>*.chm</include>
+                                        <include>*</include>
                                     </includes>
                                 </resource>
                             </resources>

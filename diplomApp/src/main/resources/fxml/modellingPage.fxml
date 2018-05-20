@@ -20,6 +20,8 @@
                     <items>
                         <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
                         <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Стартовая страница"
+                                  styleClass="menuStart"/>
                     </items>
                 </Menu>
                 <Menu id="menu-item" mnemonicParsing="false" text="Справка">
@@ -28,7 +30,6 @@
                         <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" />
                     </items>
                 </Menu>
-                <Menu id="menu-item" mnemonicParsing="false" text="Назад" />
             </menus>
         </MenuBar>
       <ScrollPane prefHeight="943.0" prefWidth="1920.0">

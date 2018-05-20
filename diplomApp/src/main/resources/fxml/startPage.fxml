@@ -10,64 +10,69 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <MenuBar id="menu-bar" VBox.vgrow="NEVER">
-      <menus>
-        <Menu id="menu-item" styleClass="menuModel" mnemonicParsing="false" text="Меню">
-               <items>
-                  <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" styleClass="menuModel" />
-                  <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" styleClass="menuTopology" />
-               </items>
-        </Menu>
-        <Menu id="menu-item" mnemonicParsing="false" text="Справка">
-          <items>
-            <MenuItem id="menu-item" mnemonicParsing="false" text="Руководство" styleClass="menuTutorial" />
-                  <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" styleClass="menuAbout" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-      <Label id="title" alignment="CENTER" text="СИСТЕМА МОДЕЛИРОВАНИЯ" textAlignment="CENTER" underline="true" wrapText="true">
-         <font>
-            <Font name="Times New Roman Italic" size="64.0" />
-         </font>
-         <VBox.margin>
-            <Insets top="350.0" />
-         </VBox.margin>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Button id="buttons" mnemonicParsing="false" text="Моделирование" styleClass="model" textAlignment="CENTER">
-         <VBox.margin>
-            <Insets top="100.0" />
-         </VBox.margin>
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Button>
-      <Button id="buttons" mnemonicParsing="false" prefWidth="320.0" text="Топологии" styleClass="topology" textAlignment="CENTER">
-         <VBox.margin>
-            <Insets top="50.0" />
-         </VBox.margin>
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Button>
-  </children>
-  <stylesheets>
-    <URL value="@BasicApplication.css" />
-  </stylesheets>
-   <styleClass>
-      <String fx:value="background" />
-      <String fx:value="label-bright" />
-   </styleClass>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="980.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar id="menu-bar" VBox.vgrow="NEVER">
+            <menus>
+                <Menu id="menu-item" styleClass="menuModel" mnemonicParsing="false" text="Меню">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" styleClass="menuModel"/>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" styleClass="menuTopology"/>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Стартовая страница"
+                                  styleClass="menuStart"/>
+                    </items>
+                </Menu>
+                <Menu id="menu-item" mnemonicParsing="false" text="Справка">
+                    <items>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="Руководство" styleClass="menuTutorial"/>
+                        <MenuItem id="menu-item" mnemonicParsing="false" text="О программе" styleClass="menuAbout"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label id="title" alignment="CENTER" text="СИСТЕМА МОДЕЛИРОВАНИЯ" textAlignment="CENTER" underline="true"
+               wrapText="true">
+            <font>
+                <Font name="Times New Roman Italic" size="64.0"/>
+            </font>
+            <VBox.margin>
+                <Insets top="350.0"/>
+            </VBox.margin>
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                    <light>
+                        <Light.Distant/>
+                    </light>
+                </Lighting>
+            </effect>
+        </Label>
+        <Button id="buttons" mnemonicParsing="false" text="Моделирование" styleClass="model" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets top="100.0"/>
+            </VBox.margin>
+            <font>
+                <Font size="36.0"/>
+            </font>
+        </Button>
+        <Button id="buttons" mnemonicParsing="false" prefWidth="320.0" text="Топологии" styleClass="topology"
+                textAlignment="CENTER">
+            <VBox.margin>
+                <Insets top="50.0"/>
+            </VBox.margin>
+            <font>
+                <Font size="36.0"/>
+            </font>
+        </Button>
+    </children>
+    <stylesheets>
+        <URL value="@BasicApplication.css"/>
+    </stylesheets>
+    <styleClass>
+        <String fx:value="background"/>
+        <String fx:value="label-bright"/>
+    </styleClass>
 </VBox>

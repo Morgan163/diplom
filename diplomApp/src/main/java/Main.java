@@ -39,11 +39,11 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
 
-        SensorEntity sensorEntity = new SensorEntity();
+       /* SensorEntity sensorEntity = new SensorEntity();
         sensorEntity.setWave(654L);
         SensorDAO sensorDAO = FactoryDAO.getInstance().getSensorDAO();
-        sensorDAO.addSensor(sensorEntity);
-        /*TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
+        sensorDAO.addSensor(sensorEntity);*/
+        TopologiesDAO topologiesDAO = FactoryDAO.getInstance().getTopologiesDAO();
         RelatedSensorsDAO relatedSensorsDAO = FactoryDAO.getInstance().getRelatedSensorsDAO();
         List<TopologiesEntity> topologiesEntitySet = (List<TopologiesEntity>) topologiesDAO.getAllTopologies();
         for(TopologiesEntity topologiesEntity:topologiesEntitySet){
@@ -57,7 +57,7 @@ public class Main {
                 System.out.println();
             }
 
-        }*/
+        }
       /*  final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");
