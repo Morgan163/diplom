@@ -55,9 +55,9 @@ public class TopologyPage extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/topologyPage.fxml"));
         initialization(root);
-        stage = primaryStage;
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Редактор топологий");
         primaryStage.setScene(new Scene(root));
@@ -65,7 +65,8 @@ public class TopologyPage extends Application {
     }
 
     private void initialization(Parent root) {
-        DrawingUtil.initMenu(root, stage);
+        DrawingUtil dr = new DrawingUtil();
+        dr.initMenu(root, stage);
         redactor = (Button) root.lookup(".redactor");
         delete = (Button) root.lookup(".delete");
         create = (Button) root.lookup(".create");

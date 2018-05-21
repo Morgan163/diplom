@@ -16,9 +16,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/startPage.fxml"));
         initialization(root);
-        stage = primaryStage;
         primaryStage.setMaximized(true);
         primaryStage.setTitle("");
         primaryStage.setScene(new Scene(root));
@@ -26,7 +26,8 @@ public class Main extends Application {
     }
 
     private void initialization(Parent root){
-        DrawingUtil.initMenu(root, stage);
+        DrawingUtil dr = new DrawingUtil();
+        dr.initMenu(root, stage);
         model = (Button) root.lookup(".model");
         model.setOnMouseClicked(e->{
             TopologyPage topologyPage = new TopologyPage(TopologyPage.MODEL);

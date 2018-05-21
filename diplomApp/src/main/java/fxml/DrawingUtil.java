@@ -41,6 +41,7 @@ public class DrawingUtil {
     private Line line;
 
     public File file;
+    private Stage stage;
 
     public DrawingUtil() {
 
@@ -107,12 +108,13 @@ public class DrawingUtil {
         relatedSensorsEntities.removeAll(forRemove);
     }
 
-    public static void initMenu(Parent root, Stage stage) {
+    public void initMenu(Parent root, Stage stage) {
+        this.stage = stage;
         MenuBar menuBar = (MenuBar) root.lookup("#menu-bar");
         menuBar.getMenus().get(0).getItems().get(0).setOnAction(e -> {
             TopologyPage main = new TopologyPage(TopologyPage.MODEL);//Моделирование
             try {
-                main.start(stage);
+                main.start(this.stage);
             } catch (Exception o_O) {
                 System.out.println(o_O.getMessage());
             }
@@ -120,7 +122,7 @@ public class DrawingUtil {
         menuBar.getMenus().get(0).getItems().get(1).setOnAction(e -> {//Топологии
             TopologyPage main = new TopologyPage(TopologyPage.TOPOLOGY);
             try {
-                main.start(stage);
+                main.start(this.stage);
             } catch (Exception o_O) {
                 System.out.println(o_O.getMessage());
             }
@@ -128,7 +130,7 @@ public class DrawingUtil {
         menuBar.getMenus().get(0).getItems().get(2).setOnAction(e -> {
             Main main = new Main();
             try {
-                main.start(stage);
+                main.start(this.stage);
             } catch (Exception o_O) {
                 System.out.println(o_O.getMessage());
             }

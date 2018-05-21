@@ -57,7 +57,8 @@ public class ModelPage extends Application {
     }
 
     private void initialization(Parent root) {
-        DrawingUtil.initMenu(root, stage);
+        DrawingUtil dr = new DrawingUtil();
+        dr.initMenu(root, stage);
         waweWayTable = (TableView) root.lookup(".table");
         reservTable = (TableView) root.lookup(".reserv");
         createDatas(modellingController.getSensorWayMap());

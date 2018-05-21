@@ -109,7 +109,8 @@ public class RedactorPage extends Application {
     }
 
     private void initialization(Parent root) {
-        DrawingUtil.initMenu(root, stage);
+        DrawingUtil dr = new DrawingUtil();
+        dr.initMenu(root, stage);
         breg = (Button) root.lookup("#grid-button");
         topology = (Button) root.lookup("#topology");
         save = (Button) root.lookup("#buttons");
@@ -236,7 +237,12 @@ public class RedactorPage extends Application {
                     System.out.println(o_O.getMessage());
                 }
             }
-            TopologiesEntity topologiesEntity = new TopologiesEntity();
+            TopologiesEntity topologiesEntity;
+            if (topologyUtil == null) {
+                topologiesEntity = new TopologiesEntity();
+            }else{
+                topologiesEntity = topologyUtil.getTopologiesEntity();
+            }
             topologiesEntity.setSensorBySensor(circleSensorEntityMap.get(source));
             topologiesEntity.setName(name.getText());
             TopologyUtil topologyUtil = new TopologyUtil();
