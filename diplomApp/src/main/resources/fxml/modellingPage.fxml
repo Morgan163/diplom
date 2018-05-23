@@ -20,8 +20,7 @@
                     <items>
                         <MenuItem id="menu-item" mnemonicParsing="false" text="Моделирование" />
                         <MenuItem id="menu-item" mnemonicParsing="false" text="Топологии" />
-                        <MenuItem id="menu-item" mnemonicParsing="false" text="Стартовая страница"
-                                  styleClass="menuStart"/>
+                        <MenuItem id="menu-item" mnemonicParsing="false" styleClass="menuStart" text="Стартовая страница" />
                     </items>
                 </Menu>
                 <Menu id="menu-item" mnemonicParsing="false" text="Справка">
@@ -42,7 +41,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView layoutX="6.0" layoutY="7.0" prefHeight="888.0" prefWidth="1914.0" styleClass="table">
+                                    <TableView layoutY="1.0" prefHeight="894.0" prefWidth="1920.0" styleClass="table">
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
@@ -55,7 +54,10 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <TableView prefHeight="892.0" prefWidth="564.0" styleClass="reserv" />
+                                    <TableView layoutX="-4.0" layoutY="-2.0" prefHeight="894.0" prefWidth="568.0" styleClass="reserv">
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy></TableView>
                                  </children>
                               </AnchorPane>
                         </content>

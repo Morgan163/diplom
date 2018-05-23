@@ -191,19 +191,23 @@ public class RedactorPage extends Application {
     private void bregButtonMouseClick(MouseEvent event) {
         if (bregClick) {
             bregClick = false;
+            breg.setId("grid-button");
         } else {
             bregClick = true;
+            breg.setId("grid-button-click");
         }
     }
 
     private void topologyButtonMouseClick(MouseEvent event) {
         if (topologyClick) {
             topologyClick = false;
+            topology.setId("topology");
             if (!topologyStart) {
                 topologyStart = true;
             }
         } else {
             topologyClick = true;
+            topology.setId("topology-click");
         }
     }
 
@@ -300,7 +304,7 @@ public class RedactorPage extends Application {
         Circle circle = drawingUtil.drawBreg(event.getSceneX(), event.getScreenY()- 3*BREG_RADIUS, pane,
                 circleTextMap, false, "" , "");
         usageCircle(circle, new SensorEntity());
-        bregClick = false;
+        /*bregClick = false;*/
     }
 
     private void usageCircle(Circle circle, SensorEntity sensorEntity){
@@ -431,7 +435,7 @@ public class RedactorPage extends Application {
             line = drawingUtil.drawTopology(circle, topologyStart, pane, lineTextMap, false, "", line);
             usageLineFinish(circle, new FiberEntity());
             topologyStart = true;
-            topologyClick = false;
+           /* topologyClick = false;*/
             line = null;
         }
     }
