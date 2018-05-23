@@ -15,7 +15,7 @@ public class TopologiesEntity {
     @Basic
     @Column(name = "NAME", nullable = false, length = 50)
     private String name;
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "SENSOR", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor;
 

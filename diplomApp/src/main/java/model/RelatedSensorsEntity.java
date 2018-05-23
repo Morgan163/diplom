@@ -12,13 +12,13 @@ public class RelatedSensorsEntity {
             generator="rel_seq")*/
     @Column(name = "ID", nullable = false, precision = 0)
     private long id;
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "SENSOR1_ID", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor1Id;
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "FIBER_ID", referencedColumnName = "ID", nullable = false)
     private FiberEntity fiberByFiberId;
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "SENSOR2_ID", referencedColumnName = "ID", nullable = false)
     private SensorEntity sensorBySensor2Id;
 

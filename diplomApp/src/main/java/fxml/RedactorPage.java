@@ -1,5 +1,6 @@
 package fxml;
 
+import DAO.FactoryDAO;
 import controller.DatabaseController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -485,6 +486,11 @@ public class RedactorPage extends Application {
     private void deleteLine(Line deleteLine, Circle excludedCircle) {
         pane.getChildren().remove(deleteLine);
         deleteRelatedSensor(lineFiberEntityMap.get(deleteLine));
+      /*  try {
+            FactoryDAO.getInstance().getFiberDAO().deleteFiber(lineFiberEntityMap.get(deleteLine));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
         lineFiberEntityMap.remove(deleteLine);
         for (Circle circle : lineCircleMap.get(deleteLine)) {
             if ((!circle.equals(excludedCircle)) && (circleLinesHashMap.containsKey(circle))) {
@@ -498,6 +504,11 @@ public class RedactorPage extends Application {
 
     private void deleteCircle() {
         deleteRelatedSensor(circleSensorEntityMap.get(focusCircle));
+       /* try {
+            FactoryDAO.getInstance().getSensorDAO().deleteSensor(circleSensorEntityMap.get(focusCircle));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
         circleSensorEntityMap.remove(focusCircle);
         pane.getChildren().remove(focusCircle);
         pane.getChildren().remove(circleTextMap.get(focusCircle));
@@ -509,15 +520,20 @@ public class RedactorPage extends Application {
     }
 
     private void deleteRelatedSensor(SensorEntity sensorEntity) {
-        RelatedSensorsEntity forDelete = null;
+        List<RelatedSensorsEntity> forDelete = new ArrayList<>();
         for (RelatedSensorsEntity relatedSensorsEntity : relatedSensorsEntities) {
             if ((relatedSensorsEntity.getSensorBySensor1Id().equals(sensorEntity) ||
                     (relatedSensorsEntity.getSensorBySensor2Id().equals(relatedSensorsEntity)))) {
-                forDelete = relatedSensorsEntity;
+                forDelete.add(relatedSensorsEntity);
             }
         }
-        if (relatedSensorsEntity != null) {
-            relatedSensorsEntities.remove(forDelete);
+        for (RelatedSensorsEntity relatedSensorsEntity : forDelete) {
+            relatedSensorsEntities.remove(relatedSensorsEntity);
+           /* try {
+                FactoryDAO.getInstance().getRelatedSensorsDAO().deleteRelatedSensors(relatedSensorsEntity);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }*/
         }
     }
 

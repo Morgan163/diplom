@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class TopologyPage extends Application {
-    public static final String MODEL="MODEL";
+    public static final String MODEL = "MODEL";
     public static final String TOPOLOGY = "TOPOLOGY";
 
     private double currentX = DrawingUtil.START_X;
@@ -71,9 +71,9 @@ public class TopologyPage extends Application {
         delete = (Button) root.lookup(".delete");
         create = (Button) root.lookup(".create");
         model = (Button) root.lookup(".modelling");
-        if(command.equals(MODEL)){
+        if (command.equals(MODEL)) {
             delete.setVisible(false);
-        }else{
+        } else {
             model.setVisible(false);
         }
         redactor.setOnMouseClicked(this::redactorButtonButton);
@@ -91,7 +91,7 @@ public class TopologyPage extends Application {
     }
 
     private void redactorButtonButton(MouseEvent event) {
-        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+        if (topologyListView.getSelectionModel().getSelectedItem() != null) {
             RedactorPage redactorPage = new RedactorPage(topologyListView.getSelectionModel().getSelectedItem(),
                     RedactorPage.REDACT, command);
             try {
@@ -102,7 +102,7 @@ public class TopologyPage extends Application {
         }
     }
 
-    private void createButtonClick(MouseEvent event){
+    private void createButtonClick(MouseEvent event) {
         RedactorPage redactorPage = new RedactorPage(RedactorPage.CREATE, command);
         try {
             redactorPage.start(stage);
@@ -111,19 +111,20 @@ public class TopologyPage extends Application {
         }
     }
 
-    private void deleteButtonClick(MouseEvent event){
-        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+    private void deleteButtonClick(MouseEvent event) {
+        if (topologyListView.getSelectionModel().getSelectedItem() != null) {
             try {
                 databaseController.deleteTopology(topologyListView.getSelectionModel().getSelectedItem());
                 topologyListView.getItems().remove(topologyListView.getSelectionModel().getSelectedItem());
-            } catch (SQLException o_O) {
+            } catch (Exception o_O) {
                 System.out.println(o_O.getMessage());
+                topologyListView.getItems().remove(topologyListView.getSelectionModel().getSelectedItem());
             }
         }
     }
 
-    private void modelButtonClick(MouseEvent event){
-        if(topologyListView.getSelectionModel().getSelectedItem()!=null){
+    private void modelButtonClick(MouseEvent event) {
+        if (topologyListView.getSelectionModel().getSelectedItem() != null) {
             ModellingController modellingController = new ModellingController();
             modellingController.modelling(topologyListView.getSelectionModel().getSelectedItem());
             ModelPage modelPage = new ModelPage(modellingController);
@@ -149,8 +150,10 @@ public class TopologyPage extends Application {
     }
 
     private void selectItemListener() {
+        currentX = DrawingUtil.START_X;
+        currentY = DrawingUtil.START_Y;
         circleSensorEntityMap = new HashMap<>();
-        pane.getChildren().remove(0,pane.getChildren().size());
+        pane.getChildren().remove(0, pane.getChildren().size());
         pane.getChildren().add(source);
         TopologyUtil topologyUtil = topologyListView.getSelectionModel().getSelectedItem();
         List<RelatedSensorsEntity> relatedSensorsEntities = new ArrayList<>(
@@ -169,9 +172,9 @@ public class TopologyPage extends Application {
             while (forDraw.size() != 0) {
                 Circle circle2;
                 RelatedSensorsEntity relatedSensorsEntity = forDraw.poll();
-                if(circleSensorEntityMap.containsValue(relatedSensorsEntity.getSensorBySensor2Id())){
+                if (circleSensorEntityMap.containsValue(relatedSensorsEntity.getSensorBySensor2Id())) {
                     circle2 = getCircleBySensor(relatedSensorsEntity.getSensorBySensor2Id());
-                }else{
+                } else {
                     circle2 = drawingUtil.drawBreg(currentX, currentY, pane, circleTextMap, true,
                             relatedSensorsEntity.getSensorBySensor2Id().getWave().toString(),
                             String.valueOf(relatedSensorsEntity.getSensorBySensor2Id().getId()));
@@ -185,15 +188,16 @@ public class TopologyPage extends Application {
                         relatedSensorsEntity.getFiberByFiberId().getLength().toString(), line);
             }
             currentY = DrawingUtil.START_Y;
-            currentX+=DrawingUtil.dx;
+            currentX += DrawingUtil.dx;
 
         }
         currentY = DrawingUtil.START_Y;
         currentX = DrawingUtil.START_Y;
     }
-    private Circle getCircleBySensor(SensorEntity sensorEntity){
-        for(Map.Entry<Circle, SensorEntity> entry:circleSensorEntityMap.entrySet()){
-            if(entry.getValue().equals(sensorEntity)){
+
+    private Circle getCircleBySensor(SensorEntity sensorEntity) {
+        for (Map.Entry<Circle, SensorEntity> entry : circleSensorEntityMap.entrySet()) {
+            if (entry.getValue().equals(sensorEntity)) {
                 return entry.getKey();
             }
         }

@@ -17,11 +17,11 @@ public class SensorEntity {
     @Basic
     @Column(name = "WAVE", nullable = true, precision = 0)
     private Long wave;
-    @OneToMany(mappedBy = "sensorBySensor1Id")
+    @OneToMany(mappedBy = "sensorBySensor1Id",cascade=CascadeType.ALL)
     private Collection<RelatedSensorsEntity> relatedSensorsById;
-    @OneToMany(mappedBy = "sensorBySensor2Id")
+    @OneToMany(mappedBy = "sensorBySensor2Id",cascade=CascadeType.ALL)
     private Collection<RelatedSensorsEntity> relatedSensorsById_0;
-    @OneToMany(mappedBy = "sensorBySensor")
+    @OneToMany(mappedBy = "sensorBySensor",cascade=CascadeType.ALL)
     private Collection<TopologiesEntity> topologiesById;
 
 

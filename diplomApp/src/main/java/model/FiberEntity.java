@@ -16,7 +16,7 @@ public class FiberEntity {
     @Basic
     @Column(name = "LENGTH", nullable = true, precision = 0)
     private Long length;
-    @OneToMany(mappedBy = "fiberByFiberId")
+    @OneToMany(mappedBy = "fiberByFiberId", cascade=CascadeType.ALL)
     private Collection<RelatedSensorsEntity> relatedSensorsById;
 
 
