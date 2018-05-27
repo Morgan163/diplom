@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="changes">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/RedactorPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" afterPath="$PROJECT_DIR$/src/main/java/fxml/TopologyPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/FiberEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/RelatedSensorsEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/SensorEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/model/TopologiesEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/../Диаграммы/Thumbs.db" afterPath="$PROJECT_DIR$/../Диаграммы/Thumbs.db" />
-      <change beforePath="$PROJECT_DIR$/../Документы/Thumbs.db" afterPath="$PROJECT_DIR$/../Документы/Thumbs.db" />
-      <change beforePath="$PROJECT_DIR$/../Документы/Автоматизированная система моделирования волоконно-оптических датчиков со структурным резервированием.pptx" afterPath="$PROJECT_DIR$/../Документы/Автоматизированная система моделирования волоконно-оптических датчиков со структурным резервированием.pptx" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/FiberEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/RelatedSensorsEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/SensorEntity.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" afterPath="$PROJECT_DIR$/target/classes/model/TopologiesEntity.class" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -762,7 +757,7 @@
       <workItem from="1526968965092" duration="1929000" />
       <workItem from="1527001848402" duration="5551000" />
       <workItem from="1527076310252" duration="3416000" />
-      <workItem from="1527089292318" duration="13174000" />
+      <workItem from="1527089292318" duration="13325000" />
     </task>
     <task id="LOCAL-00001" summary="Added gui forms">
       <created>1525639781753</created>
@@ -925,15 +920,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527091265577</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="changes">
+      <created>1527109481292</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1527109481292</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191587000" />
+    <option name="totallyTimeSpent" value="191738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -945,7 +946,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49257424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49257424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1024,7 +1025,8 @@
     <MESSAGE value="add tutorial" />
     <MESSAGE value="change doc" />
     <MESSAGE value="change css" />
-    <option name="LAST_COMMIT_MESSAGE" value="change css" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
